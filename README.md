@@ -3,7 +3,9 @@ Simple wallet address validator for validating Bitcoin and other altcoins addres
 
 [![Build Status](https://travis-ci.org/christsim/multicoin-address-validator.svg?branch=master)](https://travis-ci.org/christsim/multicoin-address-validator)
 
-Forked from [ryanralph/altcoin-address](https://github.com/ryanralph/altcoin-address).
+Forked from [ryanralph/altcoin-address](https://github.com/christsim/multicoin-address-validator).
+
+Which is forked from [ryanralph/altcoin-address](https://github.com/ryanralph/altcoin-address).
 
 **File size is ~17 kB (minifed and gzipped)**.
 

@@ -1,6 +1,6 @@
 {
-    "name": "multicoin-address-validator",
-    "description": "Multicoin address validator for Bitcoin and other Altcoins.",
+    "name": "multicoin-address-validator-fork",
+    "description": "Multicoin address validator for Bitcoin and other Altcoins, forked",
     "keywords": [
         "0x","zrx",
         "Aave Coin","aave",
@@ -125,7 +125,7 @@
         "ZenCash","zen"
     ],
     "version": "0.5.7",
-    "author": "Chris <chris.tsim@gmail.com>",
+    "author": "Mark <mark.suurland@gmail.com>",
     "homepage": "https://github.com/marksuurland/multicoin-address-validator",
     "license": "MIT",
     "repository": {
