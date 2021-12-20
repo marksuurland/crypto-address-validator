@@ -124,7 +124,7 @@
         "ZClassic","zcl",
         "ZenCash","zen"
     ],
-    "version": "0.5.7",
+    "version": "0.5.9",
     "author": "Mark <mark.suurland@gmail.com>",
     "homepage": "https://github.com/marksuurland/multicoin-address-validator",
     "license": "MIT",
