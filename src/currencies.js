@@ -590,8 +590,283 @@ var CURRENCIES = [{
         minLength: 43
     },
     {
+        name: 'yearn.finance',
+        symbol: 'yfi',
+        validator: ETHValidator
+    },
+    {
         name: 'Yield Guild Games',
         symbol: 'ygg',
+        validator: ETHValidator
+    },
+    {
+        name: 'Wrapped Nexus Mutual',
+        symbol: 'wnxm',
+        validator: ETHValidator
+    },
+    {
+        name: 'Verasity',
+        symbol: 'vra',
+        validator: ETHValidator
+    },
+    {
+        name: 'VIDT Datalink',
+        symbol: 'vidt',
+        validator: ETHValidator
+    },
+    {
+        name: 'Ultra',
+        symbol: 'uos',
+        validator: ETHValidator
+    },
+    {
+        name: 'Universal Market Access',
+        symbol: 'uma',
+        validator: ETHValidator
+    },
+    {
+        name: 'Terra Virtua Kolect',
+        symbol: 'tvk',
+        validator: ETHValidator
+    },
+    {
+        name: 'Tellor',
+        symbol: 'trb',
+        validator: ETHValidator
+    },
+    {
+        name: 'Tornado Cash',
+        symbol: 'torn',
+        validator: ETHValidator
+    },
+    {
+        name: 'Swipe',
+        symbol: 'sxp',
+        validator: ETHValidator
+    },
+    {
+        name: 'SushiSwap',
+        symbol: 'sushi',
+        validator: ETHValidator
+    },
+    {
+        name: 'Serum',
+        symbol: 'srm',
+        validator: ETHValidator
+    },
+    {
+        name: 'SKALE Network',
+        symbol: 'skl',
+        validator: ETHValidator
+    },
+    {
+        name: 'SHIBA INU',
+        symbol: 'shib',
+        validator: ETHValidator
+    },
+    {
+        name: 'The Sandbox',
+        symbol: 'sand',
+        validator: ETHValidator
+    },
+    {
+        name: 'Reserve Rights',
+        symbol: 'rsr',
+        validator: ETHValidator
+    },
+    {
+        name: 'KeeperDAO',
+        symbol: 'rook',
+        validator: ETHValidator
+    },
+    {
+        name: 'Reef',
+        symbol: 'reef',
+        validator: ETHValidator
+    },
+    {
+        name: 'Raiden Network Token',
+        symbol: 'rdn',
+        validator: ETHValidator
+    },
+    {
+        name: 'Rarible',
+        symbol: 'rari',
+        validator: ETHValidator
+    },
+    {
+        name: 'Quantstamp',
+        symbol: 'qsp',
+        validator: ETHValidator
+    },
+    {
+        name: 'Pundi X',
+        symbol: 'pundix',
+        validator: ETHValidator
+    },
+    {
+        name: 'Marlin',
+        symbol: 'pond',
+        validator: ETHValidator
+    },
+    {
+        name: 'Phala Network',
+        symbol: 'pha',
+        validator: ETHValidator
+    },
+    {
+        name: 'Perpetual Protocol',
+        symbol: 'perp',
+        validator: ETHValidator
+    },
+    {
+        name: 'Orchid',
+        symbol: 'oxt',
+        validator: ETHValidator
+    },
+    {
+        name: 'Orion Protocol',
+        symbol: 'orn',
+        validator: ETHValidator
+    },
+    {
+        name: 'OKB',
+        symbol: 'okb',
+        validator: ETHValidator
+    },
+    {
+        name: 'Origin Protocol',
+        symbol: 'ogn',
+        validator: ETHValidator
+    },
+    {
+        name: 'Enzyme',
+        symbol: 'mln',
+        validator: ETHValidator
+    },
+    {
+        name: 'Loopring',
+        symbol: 'lrc',
+        validator: ETHValidator
+    },
+    {
+        name: 'Kyber Network Crystal v2',
+        symbol: 'knc',
+        validator: ETHValidator
+    },
+    {
+        name: 'Injective Protocol',
+        symbol: 'inj',
+        validator: ETHValidator
+    },
+    {
+        name: 'Illuvium',
+        symbol: 'ilv',
+        validator: ETHValidator
+    },
+    {
+        name: 'Hegic',
+        symbol: 'hegic',
+        validator: ETHValidator
+    },
+    {
+        name: 'The Graph',
+        symbol: 'grt',
+        validator: ETHValidator
+    },
+    {
+        name: 'Gods Unchained',
+        symbol: 'gods',
+        validator: ETHValidator
+    },
+    {
+        name: 'Aavegotchi',
+        symbol: 'ghst',
+        validator: ETHValidator
+    },
+    {
+        name: 'FUNToken',
+        symbol: 'fun',
+        validator: ETHValidator
+    },
+    {
+        name: 'FTX Token',
+        symbol: 'ftt',
+        validator: ETHValidator
+    },
+    {
+        name: 'Fantom',
+        symbol: 'ftm',
+        validator: ETHValidator
+    },
+    {
+        name: 'e-Radix',
+        symbol: 'exrd',
+        validator: ETHValidator
+    },
+    {
+        name: 'Ethernity Chain',
+        symbol: 'ern',
+        validator: ETHValidator
+    },
+    {
+        name: 'Ethereum Name Service',
+        symbol: 'ens',
+        validator: ETHValidator
+    },
+    {
+        name: 'Dent',
+        symbol: 'dent',
+        validator: ETHValidator
+    },
+    {
+        name: 'Curve DAO Token',
+        symbol: 'crv',
+        validator: ETHValidator
+    },
+    {
+        name: 'Celsius',
+        symbol: 'cel',
+        validator: ETHValidator
+    },
+    {
+        name: 'bZx Protocol',
+        symbol: 'bzrx',
+        validator: ETHValidator
+    },
+    {
+        name: 'Bluzelle',
+        symbol: 'blz',
+        validator: ETHValidator
+    },
+    {
+        name: 'Balancer',
+        symbol: 'bal',
+        validator: ETHValidator
+    },
+    {
+        name: 'Badger DAO',
+        symbol: 'badger',
+        validator: ETHValidator
+    },
+    {
+        name: 'Axie Infinity',
+        symbol: 'axs',
+        validator: ETHValidator
+    },
+    {
+        name: 'Audius',
+        symbol: 'audio',
+        validator: ETHValidator
+    },
+    {
+        name: 'Amp',
+        symbol: 'amp',
+        validator: ETHValidator
+    },
+    {
+        name: 'SingularityNET',
+        symbol: 'agix',
         validator: ETHValidator
     },
 ];
