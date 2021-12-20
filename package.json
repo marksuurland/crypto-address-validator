@@ -124,13 +124,13 @@
         "ZClassic","zcl",
         "ZenCash","zen"
     ],
-    "version": "0.5.6",
+    "version": "0.5.7",
     "author": "Chris <chris.tsim@gmail.com>",
-    "homepage": "https://github.com/christsim/multicoin-address-validator",
+    "homepage": "https://github.com/marksuurland/multicoin-address-validator",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/christsim/multicoin-address-validator.git"
+        "url": "https://github.com/marksuurland/multicoin-address-validator.git"
     },
     "main": "src/wallet_address_validator",
     "engines": {
