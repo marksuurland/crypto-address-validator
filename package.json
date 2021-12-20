@@ -355,7 +355,9 @@
         "Amp",
         "amp",
         "SingularityNET",
-        "agix"
+        "agix",
+        "Status",
+        "snt"
     ],
     "version": "0.5.7",
     "author": "Mark <mark.suurland@gmail.com>",

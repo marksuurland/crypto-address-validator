@@ -868,7 +868,7 @@ var CURRENCIES = [{
         name: 'SingularityNET',
         symbol: 'agix',
         validator: ETHValidator
-    },
+    }
 ];
 
 
