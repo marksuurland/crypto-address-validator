@@ -588,7 +588,12 @@ var CURRENCIES = [{
         validator: Base58Validator,
         maxLength: 44,
         minLength: 43
-    }
+    },
+    {
+        name: 'Yield Guild Games',
+        symbol: 'ygg',
+        validator: ETHValidator
+    },
 ];
 
 
