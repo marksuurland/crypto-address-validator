@@ -1,5 +1,5 @@
 {
-    "name": "multicoin-address-validator-fork",
+    "name": "multicoin-address-validator-forked",
     "description": "Multicoin address validator for Bitcoin and other Altcoins, forked",
     "keywords": [
         "0x",
@@ -245,9 +245,9 @@
         "ZenCash",
         "zen"
     ],
-    "version": "0.5.11",
+    "version": "0.5.7",
     "author": "Mark <mark.suurland@gmail.com>",
-    "homepage": "https://github.com/marksuurland/multicoin-address-validator",
+    "homepage": "https://github.com/marksuurland/multicoin-address-validator-forked",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -279,6 +279,7 @@
     "devDependencies": {
         "browserify": "^17.0.0",
         "chai": "^4.3.4",
+        "buffer": "^6.0.3",
         "karma": "^6.3.2",
         "karma-chai": "^0.1.0",
         "karma-chrome-launcher": "^3.1.0",
