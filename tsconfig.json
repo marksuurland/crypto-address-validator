@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "strict": true,
+      "module": "amd",
+      "declaration": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "experimentalDecorators": true,
+          "emitDecoratorMetadata": true,
+      "rootDir": ".",
+      "sourceMap": true,
+      "listFiles": true,
+      "newLine": "LF",
+      "noEmitOnError": true
+    },
+    "filesGlob": [
+      "./**/*.ts",
+      "./**/*.tsx",
+      "!./**/*.d.ts",
+      "!./node_modules/**/*.ts",
+      "./node_modules/typescript/lib/lib.es6.d.ts"
+    ],
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
+    "typedocOptions": {
+      "name": "multicoin-address-validator-ts"
+    }
+  }

@@ -1,6 +1,6 @@
 var cryptoUtils = require('./crypto/utils');
 
-function decodeBase58Address(base58Sting) {
+function decodeBase58Address(base58Sting: any) {
     if (typeof (base58Sting) !== 'string') {
         return false;
     }
@@ -33,7 +33,7 @@ function decodeBase58Address(base58Sting) {
     return false;
 }
 
-function getEnv(currency, networkType) {
+function getEnv(currency: any, networkType: any) {
     var evn = networkType || 'prod';
 
     if (evn !== 'prod' && evn !== 'testnet') evn = 'prod';
@@ -45,7 +45,7 @@ module.exports = {
     /**
      * tron address validation
      */
-    isValidAddress: function (mainAddress, currency, opts) {
+    isValidAddress: function (mainAddress: any, currency: any, opts: any) {
         var networkType = opts ? opts.networkType : '';
         var address = decodeBase58Address(mainAddress);
 

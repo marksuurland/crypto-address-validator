@@ -368,17 +368,14 @@
         "url": "https://github.com/marksuurland/multicoin-address-validator.git"
     },
     "main": "src/wallet_address_validator",
-    "engines": {
-        "node": ">=12.0.0"
-    },
-    "engineStrict": true,
     "scripts": {
         "bundle": "browserify src/wallet_address_validator.js --standalone WAValidator --outfile dist/wallet-address-validator.js",
         "minify": "uglifyjs -c -m -o dist/wallet-address-validator.min.js -- dist/wallet-address-validator.js",
         "test:node": "mocha test",
         "test:browser": "npm run bundle && npm run minify && karma start",
         "test": "npm run test:node && npm run test:browser",
-        "start": "npm run bundle && npm run minify && npm test"
+        "start": "npm run bundle && npm run minify && npm test",
+        "build": "tsc"
     },
     "dependencies": {
         "base-x": "^3.0.9",
@@ -392,15 +389,15 @@
     },
     "devDependencies": {
         "browserify": "^17.0.0",
-        "chai": "^4.3.4",
         "buffer": "^6.0.3",
+        "chai": "^4.3.4",
         "karma": "^6.3.2",
         "karma-chai": "^0.1.0",
         "karma-chrome-launcher": "^3.1.0",
         "karma-mocha": "^2.0.1",
         "minify": "^6.0.1",
         "mocha": "^8.3.2",
-        "uglify-es": "^3.3.9"
+        "typescript": "^4.5.4"
     },
     "standard": {
         "ignore": [

@@ -13,7 +13,7 @@ Which is forked from [ryanralph/altcoin-address](https://github.com/ryanralph/al
 
 ### NPM
 ```
-npm install multicoin-address-validator
+npm install multicoin-address-validator-ts
 ```
 
 ### Browser

@@ -3,7 +3,7 @@ const cryptoUtils = require('./crypto/utils');
 
 const prefix = new Uint8Array([6, 161, 159]);
 
-function decodeRaw(buffer) {
+function decodeRaw(buffer: any) {
     let payload = buffer.slice(0, -4);
     let checksum = buffer.slice(-4);
     let newChecksum = cryptoUtils.hexStr2byteArray(
@@ -18,7 +18,7 @@ function decodeRaw(buffer) {
     return payload;
 }
 
-const isValidAddress = function(address) {
+const isValidAddress = function(address: any) {
     try {
         let buffer = base58.decode(address);
         let payload = decodeRaw(buffer);

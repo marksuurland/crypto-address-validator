@@ -1,14 +1,14 @@
 var BTCValidator = require('./bitcoin_validator');
 var ETHValidator = require('./ethereum_validator');
 
-function checkBothValidators(address, currency, networkType) {
+function checkBothValidators(address: string, currency: string, networkType: string) {
     var result = BTCValidator.isValidAddress(address, currency, networkType);
     return result ? result :
         ETHValidator.isValidAddress(address, currency, networkType);
 }
 
 module.exports = {
-    isValidAddress: function (address, currency, opts) {
+    isValidAddress: function (address: string, currency: string, opts: any) {
         if (opts) {
             if (opts.chainType === 'erc20') {
                 return ETHValidator.isValidAddress(address, currency, opts.networkType);
