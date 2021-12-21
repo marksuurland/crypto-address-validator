@@ -7,7 +7,7 @@ import {decode} from './base58';
 import * as base32 from './base32';
 var BigNum = require('browserify-bignum');
 
-function numberToHex(number: any, length: any) {
+export function numberToHex(number: any, length: any) {
     var hex = number.toString(16);
     if (hex.length % 2 === 1) {
         hex = '0' + hex;
@@ -79,54 +79,60 @@ function hexStr2byteArray(str: any) {
     return byteArray;
 }
 
-module.exports = {
-    numberToHex: numberToHex,
-    toHex: function (arrayOfBytes: any) {
-        var hex = '';
-        for (var i = 0; i < arrayOfBytes.length; i++) {
-            hex += numberToHex(arrayOfBytes[i]);
-        }
-        return hex;
-    },
-    sha256: function (payload: any, format = 'HEX') {
-        var sha = new jsSHA('SHA-256', format);
-        sha.update(payload);
-        return sha.getHash(format);
-    },
-    sha256x2: function (buffer: any, format = 'HEX') {
-        return this.sha256(this.sha256(buffer, format), format);
-    },
-    sha256Checksum: function (payload: any) {
-        return this.sha256(this.sha256(payload)).substr(0, 8);
-    },
-    sha512_256: function (payload: any, format = 'HEX') {
-        const hash = sha512256.create()
-        hash.update(Buffer.from(payload, format))
-        return hash.hex().toUpperCase();
-    },
-    blake256: function (hexString: any) {
-        return new Blake256().update(hexString, 'hex').digest('hex');
-    },
-    blake256Checksum: function (payload: any) {
-        return this.blake256(this.blake256(payload)).substr(0, 8);
-    },
-    blake2b: function (hexString: any, outlen: any) {
-        return new Blake2B(outlen).update(Buffer.from(hexString, 'hex')).digest('hex');
-    },
-    keccak256: function (hexString: any) {
-        return keccak256(hexString);
-    },
-    keccak256Checksum: function (payload: any) {
-        return keccak256(payload).toString().substr(0, 8);
-    },
-    blake2b256: function (hexString: any) {
-        return new Blake2B(32).update(Buffer.from(hexString, 'hex'), 32).digest('hex');
-    },
-    base58: decode,
-    byteArray2hexStr: byteArray2hexStr,
-    hexStr2byteArray: hexStr2byteArray,
-    bigNumberToBuffer: function(bignumber: any, size: any){
-        return new BigNum(bignumber).toBuffer({ size, endian: 'big' });
-    },
-    base32: base32
+export function toHex(arrayOfBytes: any) {
+    var hex = '';
+    for (var i = 0; i < arrayOfBytes.length; i++) {
+        hex += numberToHex(arrayOfBytes[i]);
+    }
+    return hex;
 }
+
+export function sha256(payload: any, format = 'HEX') {
+    var sha = new jsSHA('SHA-256', format);
+    sha.update(payload);
+    return sha.getHash(format);
+}
+
+export function sha256x2(buffer: any, format = 'HEX') {
+    return sha256(sha256(buffer, format), format);
+}
+
+export function sha256Checksum(payload: any) {
+    return sha256(sha256(payload)).substr(0, 8);
+}
+
+export function sha512_256(payload: any, format = 'HEX') {
+    const hash = sha512256.create()
+    hash.update(Buffer.from(payload, format))
+    return hash.hex().toUpperCase();
+}
+
+export function blake256(hexString: any) {
+    return new Blake256().update(hexString, 'hex').digest('hex');
+}
+
+export function blake256Checksum(payload: any) {
+    return blake256(blake256(payload)).substr(0, 8);
+}
+
+export function blake2b(hexString: any, outlen: any) {
+    return new Blake2B(outlen).update(Buffer.from(hexString, 'hex')).digest('hex');
+}
+// export function keccak256(hexString: any) {
+//     return keccak256(hexString);
+// }
+
+export function keccak256Checksum (payload: any) {
+    return keccak256(payload).toString().substr(0, 8);
+}
+
+export function blake2b256 (hexString: any) {
+    return new Blake2B(32).update(Buffer.from(hexString, 'hex'), 32).digest('hex');
+}
+    // export decode,
+    // byteArray2hexStr: byteArray2hexStr,
+    // hexStr2byteArray: hexStr2byteArray,
+export function bigNumberToBuffer(bignumber: any, size: any){
+    return new BigNum(bignumber).toBuffer({ size, endian: 'big' });
+}
+    // base32: base32
