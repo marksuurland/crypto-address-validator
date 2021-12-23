@@ -37,7 +37,6 @@ npm install multicoin-address-validator-ts
 * 0x/zrx `'0x'` or `'zrx'`
 * Aave Coin/aave `'Aave Coin'` or `'aave'`
 * Aavegotchi/ghst `'Aavegotchi'` or `'ghst'`
-* Algorand/algo `'Algorand'` or `'algo'`
 * Amp/amp `'Amp'` or `'amp'`
 * Aragon/ant `'Aragon'` or `'ant'`
 * Audius/audio `'Audius'` or `'audio'`

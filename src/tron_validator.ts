@@ -1,4 +1,5 @@
-import { sha256, hexStr2byteArray } from './crypto/utils';
+import { sha256, hexStr2byteArray, byteArray2hexStr } from './crypto/utils';
+const base58 = require('./crypto/externals/base58');
 
 function decodeBase58Address(base58Sting: any) {
     if (typeof (base58Sting) !== 'string') {
@@ -9,7 +10,7 @@ function decodeBase58Address(base58Sting: any) {
     }
 
     try {
-        var address = cryptoUtils.base58(base58Sting);
+        var address = base58(base58Sting);
     } catch (e) {
         return false
     }
@@ -17,13 +18,13 @@ function decodeBase58Address(base58Sting: any) {
     /*if (base58Sting.length <= 4) {
         return false;
     }*/
-    var len = address.length;
-    var offset = len - 4;
-    var checkSum = address.slice(offset);
+    const len = address.length;
+    const offset = len - 4;
+    const checkSum = address.slice(offset);
     address = address.slice(0, offset);
-    var hash0 = sha256(cryptoUtils.byteArray2hexStr(address));
-    var hash1 = hexStr2byteArray(cryptoUtils.sha256(hash0));
-    var checkSum1 = hash1.slice(0, 4);
+    const hash0 = sha256(byteArray2hexStr(address));
+    const hash1 = hexStr2byteArray(sha256(hash0));
+    const checkSum1 = hash1.slice(0, 4);
     if (checkSum[0] === checkSum1[0] && checkSum[1] === checkSum1[1] && checkSum[2]
         === checkSum1[2] && checkSum[3] === checkSum1[3]
     ) {
@@ -34,7 +35,7 @@ function decodeBase58Address(base58Sting: any) {
 }
 
 function getEnv(currency: any, networkType: any) {
-    var evn = networkType || 'prod';
+    let evn = networkType || 'prod';
 
     if (evn !== 'prod' && evn !== 'testnet') evn = 'prod';
 
@@ -42,8 +43,8 @@ function getEnv(currency: any, networkType: any) {
 }
 
 export function isValidAddress(mainAddress: any, currency: any, opts: any) {
-    var networkType = opts ? opts.networkType : '';
-    var address = decodeBase58Address(mainAddress);
+    const networkType = opts ? opts.networkType : '';
+    const address = decodeBase58Address(mainAddress);
 
     if (!address) {
         return false;

@@ -3,7 +3,7 @@ var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
  /**
 * Encode a string to base32
 */
-export function b32encode(s: string) {
+var b32encode = function(s) {
     var parts = [];
     var quanta = Math.floor((s.length / 5));
     var leftover = s.length % 5;
@@ -42,7 +42,7 @@ export function b32encode(s: string) {
 * Decode a base32 string.
 * This is made specifically for our use, deals only with proper strings
 */
-export function b32decode(s: string) {
+var b32decode = function(s) {
     var r = new ArrayBuffer(s.length * 5 / 8);
     var b = new Uint8Array(r);
     for (var j = 0; j < s.length / 8; j++) {
@@ -59,3 +59,8 @@ export function b32decode(s: string) {
     }
     return b;
 }
+
+module.exports = {
+    b32decode: b32decode,
+    b32encode: b32encode
+};

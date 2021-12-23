@@ -1,13 +1,11 @@
 var jsSHA = require('jssha');
 var sha512256 = require('js-sha512').sha512_256
-var Blake256 = require('./blake256');
+var Blake256 = require('./external/blake256');
 var keccak256 = require('./sha3')['keccak256'];
 var Blake2B = require('./blake2b');
-import {decode} from './base58';
-import * as base32 from './base32';
 var BigNum = require('browserify-bignum');
 
-export function numberToHex(number: any, length: any) {
+export function numberToHex(number: any, length?: any) {
     var hex = number.toString(16);
     if (hex.length % 2 === 1) {
         hex = '0' + hex;
@@ -48,7 +46,7 @@ function byte2hexStr(byte: any) {
     return str;
 }
 
-function byteArray2hexStr(byteArray: any) {
+export function byteArray2hexStr(byteArray: any) {
     var str = "";
     for (var i = 0; i < (byteArray.length - 1); i++) {
         str += byte2hexStr(byteArray[i]);
@@ -57,7 +55,7 @@ function byteArray2hexStr(byteArray: any) {
     return str;
 }
 
-function hexStr2byteArray(str: any) {
+export function hexStr2byteArray(str: any) {
     var byteArray = Array();
     var d = 0;
     var i = 0;
@@ -101,9 +99,9 @@ export function sha256Checksum(payload: any) {
     return sha256(sha256(payload)).substr(0, 8);
 }
 
-export function sha512_256(payload: any, format = 'HEX') {
+export function sha512_256(payload: any) {
     const hash = sha512256.create()
-    hash.update(Buffer.from(payload, format))
+    hash.update(Buffer.from(payload, "hex"))
     return hash.hex().toUpperCase();
 }
 
@@ -118,9 +116,6 @@ export function blake256Checksum(payload: any) {
 export function blake2b(hexString: any, outlen: any) {
     return new Blake2B(outlen).update(Buffer.from(hexString, 'hex')).digest('hex');
 }
-// export function keccak256(hexString: any) {
-//     return keccak256(hexString);
-// }
 
 export function keccak256Checksum (payload: any) {
     return keccak256(payload).toString().substr(0, 8);
@@ -129,10 +124,7 @@ export function keccak256Checksum (payload: any) {
 export function blake2b256 (hexString: any) {
     return new Blake2B(32).update(Buffer.from(hexString, 'hex'), 32).digest('hex');
 }
-    // export decode,
-    // byteArray2hexStr: byteArray2hexStr,
-    // hexStr2byteArray: hexStr2byteArray,
+
 export function bigNumberToBuffer(bignumber: any, size: any){
     return new BigNum(bignumber).toBuffer({ size, endian: 'big' });
 }
-    // base32: base32

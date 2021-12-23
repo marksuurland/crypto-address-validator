@@ -1,24 +1,25 @@
-var currencies = require('./currencies');
+import { getAll, getByNameOrSymbol } from './currencies';
+import { Options } from './types/types';
 
-var DEFAULT_CURRENCY_NAME = 'bitcoin';
+const DEFAULT_CURRENCY_NAME = 'bitcoin';
 
-export function validate(address: string, currencyNameOrSymbol: string, opts: string) {
-    var currency = currencies.getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
+export function validate(address: string, currencyNameOrSymbol: string, opts: Options) {
+    var currency = getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
 
     if (currency && currency.validator) {
-        if (opts && typeof opts === 'string') {
-            return currency.validator.isValidAddress(address, currency, { networkType: opts });
-        }
-        return currency.validator.isValidAddress(address, currency, opts);
+        // if (opts && typeof opts === 'string') {
+        //     return currency.validator.isValidAddress(address, currency, { networkType: Options });
+        // }
+        return currency.validator(address, currency, opts);
     }
 
     throw new Error('Missing validator for currency: ' + currencyNameOrSymbol);
 }
     
 export function getCurrencies() {
-    return currencies.getAll();
+    return getAll();
 }
 
 export function findCurrency(symbol: string) {
-    return currencies.getByNameOrSymbol(symbol) || null ;
+    return getByNameOrSymbol(symbol) || null ;
 }

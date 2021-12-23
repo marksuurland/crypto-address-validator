@@ -1,19 +1,20 @@
-var BTCValidator = require('./bitcoin_validator');
-var ETHValidator = require('./ethereum_validator');
+import * as BTCValidator from './bitcoin_validator';
+import * as ETHValidator from './ethereum_validator';
+import { Currency, Options } from './types/types';
 
-function checkBothValidators(address: string, currency: string, networkType: string) {
-    var result = BTCValidator.isValidAddress(address, currency, networkType);
-    return result ? result :
-        ETHValidator.isValidAddress(address, currency, networkType);
-}
-
-export function isValidAddress(address: string, currency: string, opts: any) {
+export function isValidAddress(address: string, currency: Currency, opts: Options) {
     if (opts) {
         if (opts.chainType === 'erc20') {
-            return ETHValidator.isValidAddress(address, currency, opts.networkType);
+            return ETHValidator.isValidAddress(address);
         } else if (opts.chainType === 'omni') {
-            return BTCValidator.isValidAddress(address, currency, opts.networkType);
+            return BTCValidator.isValidAddress(address, currency, opts);
         }
     }
     return checkBothValidators(address, currency, opts);
+}
+
+function checkBothValidators(address: string, currency: Currency, opts: Options) {
+    var result = BTCValidator.isValidAddress(address, currency, opts);
+    return result ? result :
+        ETHValidator.isValidAddress(address);
 }
