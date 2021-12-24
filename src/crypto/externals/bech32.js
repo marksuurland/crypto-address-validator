@@ -26,7 +26,7 @@ export const encodings = {
     BECH32M: "bech32m",
 };
 
-function getEncodingConst (enc: any) {
+function getEncodingConst (enc) {
     if (enc == encodings.BECH32) {
         return 1;
     } else if (enc == encodings.BECH32M) {
@@ -36,7 +36,7 @@ function getEncodingConst (enc: any) {
     }
 }
 
-function polymod (values: any) {
+function polymod (values) {
     var chk = 1;
     for (var p = 0; p < values.length; ++p) {
         var top = chk >> 25;
@@ -50,7 +50,7 @@ function polymod (values: any) {
     return chk;
 }
 
-function hrpExpand (hrp: any) {
+function hrpExpand (hrp) {
     var ret = [];
     var p;
     for (p = 0; p < hrp.length; ++p) {
@@ -63,7 +63,7 @@ function hrpExpand (hrp: any) {
     return ret;
 }
 
-function createChecksum (hrp: any, data: any, enc: any) {
+function createChecksum (hrp, data, enc) {
     var values = hrpExpand(hrp).concat(data).concat([0, 0, 0, 0, 0, 0]);
     var mod = polymod(values) ^ (getEncodingConst(enc) || 0);
     var ret = [];
@@ -73,11 +73,11 @@ function createChecksum (hrp: any, data: any, enc: any) {
     return ret;
 }
 
-export function verifyChecksum (hrp: any, data: any, enc: any) {
+export function verifyChecksum (hrp, data, enc) {
     return polymod(hrpExpand(hrp).concat(data)) === getEncodingConst(enc);
 }
 
-export function encode (hrp: any, data: any, enc: any) {
+export function encode (hrp, data, enc) {
     var combined = data.concat(createChecksum(hrp, data, enc));
     var ret = hrp + '1';
     for (var p = 0; p < combined.length; ++p) {
@@ -86,7 +86,7 @@ export function encode (hrp: any, data: any, enc: any) {
     return ret;
 }
 
-export function decode (bechString: any, enc: any) {
+export function decode (bechString, enc) {
     var p;
     var has_lower = false;
     var has_upper = false;

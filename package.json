@@ -1,6 +1,6 @@
 {
     "name": "multicoin-address-validator-ts",
-    "version": "0.5.7",
+    "version": "0.5.9",
     "description": "Multicoin address validator for Bitcoin and other Altcoins, forked to be used with typescript",
     "keywords": [
         "0x",
@@ -113,8 +113,6 @@
         "lsk",
         "LiteCoin",
         "ltc",
-        "loki",
-        "loki",
         "Loom Network",
         "loom",
         "Maker",
@@ -131,8 +129,6 @@
         "mtl",
         "MonaCoin",
         "mona",
-        "Monero",
-        "xmr",
         "Multi-collateral DAI",
         "dai",
         "NameCoin",
@@ -368,7 +364,7 @@
         "url": "https://github.com/marksuurland/multicoin-address-validator.git"
     },
     "main": "dist/index.js",
-    "types":"dist/index.d.ts",
+    "types": "dist/index.d.ts",
     "scripts": {
         "prepare": "npm run build",
         "build": "tsc"
@@ -379,6 +375,7 @@
         "bundle": "^2.1.0",
         "cbor-js": "^0.1.0",
         "crc": "^3.8.0",
+        "js-sha3": "^0.8.0",
         "js-sha512": "^0.8.0",
         "jssha": "^2.4.2",
         "lodash.isequal": "^4.5.0"

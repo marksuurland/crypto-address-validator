@@ -1,4 +1,4 @@
-import {blake2b} from './crypto/utils';
+import {blake2b} from '../crypto/utils';
 var isEqual = require('lodash.isequal');
 
 function hexToBytes(hex: string) {

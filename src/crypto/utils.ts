@@ -1,7 +1,7 @@
 var jsSHA = require('jssha');
 var sha512256 = require('js-sha512').sha512_256
 var Blake256 = require('./external/blake256');
-var keccak256 = require('./sha3')['keccak256'];
+import * as sha3 from 'js-sha3';
 var Blake2B = require('./blake2b');
 var BigNum = require('browserify-bignum');
 
@@ -118,7 +118,7 @@ export function blake2b(hexString: any, outlen: any) {
 }
 
 export function keccak256Checksum (payload: any) {
-    return keccak256(payload).toString().substr(0, 8);
+    return sha3.keccak256(payload).toString().substr(0, 8);
 }
 
 export function blake2b256 (hexString: any) {

@@ -1,4 +1,4 @@
-import { sha256, hexStr2byteArray, byteArray2hexStr } from './crypto/utils';
+import { sha256, hexStr2byteArray, byteArray2hexStr } from '../crypto/utils';
 const base58 = require('./crypto/externals/base58');
 
 function decodeBase58Address(base58Sting: any) {

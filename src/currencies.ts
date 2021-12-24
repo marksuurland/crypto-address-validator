@@ -4,7 +4,6 @@ import * as XRPValidator from './validators/ripple_validator';
 import * as ETHValidator from './validators/ethereum_validator';
 import * as BTCValidator from './validators/bitcoin_validator';
 import * as ADAValidator from './validators/ada_validator';
-import * as XMRValidator from './validators/monero_validator';
 import * as NANOValidator from './validators/nano_validator';
 import * as SCValidator from './validators/siacoin_validator';
 import * as TRXValidator from './validators/tron_validator';
@@ -258,12 +257,6 @@ const CURRENCIES: Currency[] = [{
         bech32Hrp: { prod: ['addr'], testnet: ['addr']},
         validator: ADAValidator.isValidAddress
     }, {
-        name: 'Monero',
-        symbol: 'xmr',
-        addressTypes: { prod: ['18', '42'], testnet: ['53', '63'], stagenet: ['24'] },
-        iAddressTypes: { prod: ['19'], testnet: ['54'], stagenet: ['25'] },
-        validator: XMRValidator.isValidAddress
-    }, {
         name: 'Aragon',
         symbol: 'ant',
         validator: ETHValidator.isValidAddress,
@@ -391,12 +384,6 @@ const CURRENCIES: Currency[] = [{
         name: 'HyperSpace',
         symbol: 'xsc',
         validator: SCValidator.isValidAddress,
-    }, {
-        name: 'loki',
-        symbol: 'loki',
-        addressTypes: { prod: ['114', '115', '116'], testnet: [] },
-        iAddressTypes: { prod: ['115'], testnet: [] },
-        validator: XMRValidator.isValidAddress,
     }, {
         name: 'LBRY Credits',
         symbol: 'lbc',

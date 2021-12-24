@@ -1,6 +1,6 @@
 import * as BTCValidator from './bitcoin_validator';
 import * as ETHValidator from './ethereum_validator';
-import { Currency, Options } from './types/types';
+import { Currency, Options } from '../types/types';
 
 export function isValidAddress(address: string, currency: Currency, opts: Options) {
     if (opts) {

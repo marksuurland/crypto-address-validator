@@ -113,7 +113,6 @@ npm install multicoin-address-validator-ts
 * Lisk/lsk `'Lisk'` or `'lsk'`
 * LiteCoin/ltc `'LiteCoin'` or `'ltc'`
 * Loopring/lrc `'Loopring'` or `'lrc'`
-* loki/loki `'loki'` or `'loki'`
 * Loom Network/loom `'Loom Network'` or `'loom'`
 * Maker/mkr `'Maker'` or `'mkr'`
 * Marlin/pond `'Marlin'` or `'pond'`
@@ -123,7 +122,6 @@ npm install multicoin-address-validator-ts
 * Melon/mln `'Melon'` or `'mln'`
 * Metal/mtl `'Metal'` or `'mtl'`
 * MonaCoin/mona `'MonaCoin'` or `'mona'`
-* Monero/xmr `'Monero'` or `'xmr'`
 * Multi-collateral DAI/dai `'Multi-collateral DAI'` or `'dai'`
 * NameCoin/nmc `'NameCoin'` or `'nmc'`
 * Nano/nano `'Nano'` or `'nano'`

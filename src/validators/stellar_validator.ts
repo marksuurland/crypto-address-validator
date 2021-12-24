@@ -1,6 +1,6 @@
 var baseX = require('base-x');
 var crc = require('crc');
-import {numberToHex, toHex} from './crypto/utils';
+import {numberToHex, toHex} from '../crypto/utils';
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 

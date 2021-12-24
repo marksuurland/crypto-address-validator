@@ -1,4 +1,4 @@
-var keccak256 = require('../crypto/externals/sha3')['keccak256'];
+import * as sha3 from 'js-sha3';
 
 export function isValidAddress(address: string): boolean {
     if (!/^0x[0-9a-fA-F]{40}$/.test(address)) {
@@ -19,7 +19,7 @@ function verifyChecksum(address: string): boolean {
     // Check each case
     address = address.replace('0x','');
 
-    var addressHash = keccak256(address.toLowerCase());
+    var addressHash = sha3.keccak256(address.toLowerCase());
 
     for (var i = 0; i < 40; i++ ) {
         // The nth letter should be uppercase if the nth digit of casemap is 1
