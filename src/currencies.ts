@@ -1,23 +1,23 @@
 import { Currency } from "./types/types";
 
-import * as XRPValidator from './ripple_validator';
-import * as ETHValidator from './ethereum_validator';
-import * as BTCValidator from './bitcoin_validator';
-import * as ADAValidator from './ada_validator';
-import * as XMRValidator from './monero_validator';
-import * as NANOValidator from './nano_validator';
-import * as SCValidator from './siacoin_validator';
-import * as TRXValidator from './tron_validator';
-import * as NEMValidator from './nem_validator';
-import * as LSKValidator from './lisk_validator';
-import * as BCHValidator from './bch_validator';
-import * as XLMValidator from './stellar_validator';
-import * as EOSValidator from './eos_validator';
-import * as XTZValidator from './tezos_validator';
-import * as USDTValidator from './usdt_validator';
-import * as DotValidator from './dot_validator';
-import * as BIP173Validator from './bip173_validator';
-import * as Base58Validator from './base58_validator';
+import * as XRPValidator from './validators/ripple_validator';
+import * as ETHValidator from './validators/ethereum_validator';
+import * as BTCValidator from './validators/bitcoin_validator';
+import * as ADAValidator from './validators/ada_validator';
+import * as XMRValidator from './validators/monero_validator';
+import * as NANOValidator from './validators/nano_validator';
+import * as SCValidator from './validators/siacoin_validator';
+import * as TRXValidator from './validators/tron_validator';
+import * as NEMValidator from './validators/nem_validator';
+import * as LSKValidator from './validators/lisk_validator';
+import * as BCHValidator from './validators/bch_validator';
+import * as XLMValidator from './validators/stellar_validator';
+import * as EOSValidator from './validators/eos_validator';
+import * as XTZValidator from './validators/tezos_validator';
+import * as USDTValidator from './validators/usdt_validator';
+import * as DotValidator from './validators/dot_validator';
+import * as BIP173Validator from './validators/bip173_validator';
+import * as Base58Validator from './validators/base58_validator';
 
 // defines P2PKH and P2SH address types for standard (prod) and testnet networks
 const CURRENCIES: Currency[] = [{

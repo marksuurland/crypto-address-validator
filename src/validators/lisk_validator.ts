@@ -1,4 +1,4 @@
-import {bigNumberToBuffer} from './crypto/utils';
+import {bigNumberToBuffer} from '../crypto/utils';
 
 function verifyAddress(address: string): boolean {
     const BUFFER_SIZE = 8;

@@ -1,6 +1,6 @@
-import { Currency, Options } from "./types/types";
+import { Currency, Options } from "../types/types";
 
-var base58 = require('./crypto/base58');
+var base58 = require('../crypto/externals/base58');
 var segwit = require('./crypto/segwit_addr');
 var cryptoUtils = require('./crypto/utils');
 
@@ -33,7 +33,6 @@ function getChecksum(hashFunction: string, payload: string) {
 }
 
 function getAddressType(address: string, currency: Currency): any {
-    currency = currency || {};
     // should be 25 bytes per btc address spec and 26 decred
     var expectedLength = currency.expectedLength || 25;
     var hashFunction = currency.hashFunction || 'sha256';

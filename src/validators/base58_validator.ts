@@ -1,5 +1,5 @@
-import { Currency, Options } from "./types/types";
-const base58 = require('./crypto/externals/base58');
+import { Currency, Options } from "../types/types";
+const base58 = require('../crypto/externals/base58');
 
 // simple base58 validator.  Just checks if it can be decoded.
 

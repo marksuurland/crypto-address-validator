@@ -1,5 +1,5 @@
-var base32 = require('./crypto/externals/base32');
-var bech32 = require('./crypto/externals/bech32');
+var base32 = require('../crypto/externals/base32');
+var bech32 = require('../crypto/externals/bech32');
 import * as BTCValidator from './bitcoin_validator';
 
 function validateAddress(address: string, currency: any, opts: any) {

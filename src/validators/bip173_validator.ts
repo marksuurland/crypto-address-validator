@@ -1,4 +1,4 @@
-const bech32 = require('./crypto/externals/bech32');
+const bech32 = require('../crypto/externals/bech32');
 
 // bip 173 bech 32 addresses (https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
 export function isValidAddress(address: string, currency: any, opts: any = {}): boolean {

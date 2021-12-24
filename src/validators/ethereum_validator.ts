@@ -1,4 +1,4 @@
-var keccak256 = require('./sha3')['keccak256'];
+var keccak256 = require('../crypto/externals/sha3')['keccak256'];
 
 export function isValidAddress(address: string): boolean {
     if (!/^0x[0-9a-fA-F]{40}$/.test(address)) {

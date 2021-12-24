@@ -1,6 +1,6 @@
-import { byteArray2hexStr, blake2b } from './crypto/utils';
-import { Currency, Options } from './types/types';
-const base58 = require('./crypto/externals/base58');
+import { byteArray2hexStr, blake2b } from '../crypto/utils';
+import { Currency, Options } from '../types/types';
+const base58 = require('../crypto/externals/base58');
 
 // from https://github.com/paritytech/substrate/wiki/External-Address-Format-(SS58)
 const addressFormats = [
