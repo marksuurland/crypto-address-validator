@@ -13,7 +13,7 @@ Which is forked from [ryanralph/altcoin-address](https://github.com/ryanralph/al
 
 ### NPM
 ```
-npm install multicoin-address-validator
+npm install multicoin-address-validator-ts
 ```
 
 ### Browser
@@ -37,7 +37,6 @@ npm install multicoin-address-validator
 * 0x/zrx `'0x'` or `'zrx'`
 * Aave Coin/aave `'Aave Coin'` or `'aave'`
 * Aavegotchi/ghst `'Aavegotchi'` or `'ghst'`
-* Algorand/algo `'Algorand'` or `'algo'`
 * Amp/amp `'Amp'` or `'amp'`
 * Aragon/ant `'Aragon'` or `'ant'`
 * Audius/audio `'Audius'` or `'audio'`
@@ -114,7 +113,6 @@ npm install multicoin-address-validator
 * Lisk/lsk `'Lisk'` or `'lsk'`
 * LiteCoin/ltc `'LiteCoin'` or `'ltc'`
 * Loopring/lrc `'Loopring'` or `'lrc'`
-* loki/loki `'loki'` or `'loki'`
 * Loom Network/loom `'Loom Network'` or `'loom'`
 * Maker/mkr `'Maker'` or `'mkr'`
 * Marlin/pond `'Marlin'` or `'pond'`
@@ -124,7 +122,6 @@ npm install multicoin-address-validator
 * Melon/mln `'Melon'` or `'mln'`
 * Metal/mtl `'Metal'` or `'mtl'`
 * MonaCoin/mona `'MonaCoin'` or `'mona'`
-* Monero/xmr `'Monero'` or `'xmr'`
 * Multi-collateral DAI/dai `'Multi-collateral DAI'` or `'dai'`
 * NameCoin/nmc `'NameCoin'` or `'nmc'`
 * Nano/nano `'Nano'` or `'nano'`
