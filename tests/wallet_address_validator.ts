@@ -504,7 +504,7 @@ describe('validate', function () {
 
         it('should return true for correct nem addresses', function () {
             valid('NBZMQO7ZPBYNBDUR7F75MAKA2S3DHDCIFG775N3D', 'xem', null);
-            valid('TDWTRGT6GVWCV7GRWFNI45S53PGOJBKNUF3GE6PB', 'xem', { networkType: { networkType: 'testnet' } });
+            valid('TDWTRGT6GVWCV7GRWFNI45S53PGOJBKNUF3GE6PB', 'xem', { networkType: 'testnet' });
         });
 
         it('should return true for correct lsk addresses', function () {
