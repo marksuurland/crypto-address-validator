@@ -1,7 +1,7 @@
 {
-    "name": "multicoin-address-validator-ts",
+    "name": "crypto-address-validator",
     "version": "0.5.7",
-    "description": "Multicoin address validator for Bitcoin and other Altcoins, forked to be used with typescript",
+    "description": "Crypto address validator for Bitcoin and other Altcoins, forked to be used with typescript",
     "keywords": [
         "0x",
         "zrx",
@@ -355,11 +355,11 @@
         "snt"
     ],
     "author": "Mark <mark.suurland@gmail.com>",
-    "homepage": "https://github.com/marksuurland/multicoin-address-validator-forked",
+    "homepage": "https://github.com/marksuurland/crypto-address-validator",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/marksuurland/multicoin-address-validator.git"
+        "url": "https://github.com/marksuurland/crypto-address-validator.git"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
