@@ -1,4 +1,4 @@
-# crypto-address-validator
+# crypto-address-validator-ts
 Simple wallet address validator for validating Bitcoin and other altcoins addresses in **Typescript** can be used in for example an Angular project.
 
 Forked from [christsim/multicoin-address-validator](https://github.com/christsim/multicoin-address-validator).
@@ -9,7 +9,7 @@ Which is forked from [ryanralph/altcoin-address](https://github.com/ryanralph/al
 
 ### NPM
 ```
-npm install crypto-address-validator
+npm install crypto-address-validator-ts
 ```
 
 ## API
@@ -206,7 +206,7 @@ npm install crypto-address-validator
 ```typescript
 import {Directive, Input} from '@angular/core';
 import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angular/forms';
-import { validate } from 'crypto-address-validator';
+import { validate } from 'crypto-address-validator-ts';
 
 @Directive({
   selector: '[cryptoAddress]',
