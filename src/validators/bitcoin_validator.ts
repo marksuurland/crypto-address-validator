@@ -34,9 +34,6 @@ function getChecksum(hashFunction: string, payload: string) {
 
 function getAddressType(address: string, currency: Currency): any {
     // should be 25 bytes per btc address spec and 26 decred
-    if (address === '12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP' && currency.symbol === 'bch') {
-        console.log('currency', currency);
-    }
     var expectedLength = currency.expectedLength || 25;
     var hashFunction = currency.hashFunction || 'sha256';
     var decoded = getDecoded(address);
@@ -64,10 +61,6 @@ function isValidP2PKHandP2SHAddress(address: string, currency: Currency, opts: O
     let correctAddressTypes: string[];
     const addressType = getAddressType(address, currency);
 
-    if (address === '12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP' && currency.symbol === 'bch') {
-        console.log('addressType', addressType);
-    }
-
     if (addressType) {
         if (networkType === 'prod' || networkType === 'testnet') {
             correctAddressTypes = currency.addressTypes![networkType];
@@ -84,13 +77,6 @@ function isValidP2PKHandP2SHAddress(address: string, currency: Currency, opts: O
 }
 
 export function isValidAddress(address: string, currency: Currency, opts: Options): boolean {
-    if (address === '12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP' && currency.symbol === 'bch') {
-        const result1 = isValidP2PKHandP2SHAddress(address, currency, opts);
-        const result2 = segwit.isValidAddress(address, currency, opts);
-        console.log('currency', currency);
-        console.log('result3', result1);
-        console.log('result4', result2);
-    }
     return isValidP2PKHandP2SHAddress(address, currency, opts) || segwit.isValidAddress(address, currency, opts);
 }
 
