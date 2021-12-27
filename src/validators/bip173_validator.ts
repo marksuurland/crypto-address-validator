@@ -1,8 +1,11 @@
+import { Currency, Options } from "../types/types";
+
 const bech32 = require('../crypto/externals/bech32');
+const DEFAULT_NETWORK_TYPE = 'prod'
 
 // bip 173 bech 32 addresses (https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
-export function isValidAddress(address: string, currency: any, opts: any = {}): boolean {
-    const { networkType = 'prod' } = opts;
+export function isValidAddress(address: string, currency: Currency, opts: Options): boolean {
+    const networkType = opts ? opts.networkType : DEFAULT_NETWORK_TYPE;
     const decoded = bech32.decode(address, bech32.encodings.BECH32);
     if (!decoded) {
         return false;

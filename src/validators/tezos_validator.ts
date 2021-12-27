@@ -1,5 +1,5 @@
-const base58 = require('./crypto/external/base58');
 import { hexStr2byteArray, sha256x2, byteArray2hexStr } from '../crypto/utils';
+const base58 = require('../crypto/externals/base58');
 
 const prefix = new Uint8Array([6, 161, 159]);
 

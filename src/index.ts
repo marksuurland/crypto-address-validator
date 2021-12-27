@@ -7,9 +7,6 @@ export function validate(address: string, currencyNameOrSymbol: string, opts: Op
     var currency = getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
 
     if (currency && currency.validator) {
-        // if (opts && typeof opts === 'string') {
-        //     return currency.validator.isValidAddress(address, currency, { networkType: Options });
-        // }
         return currency.validator(address, currency, opts);
     }
 

@@ -392,7 +392,7 @@ const CURRENCIES: Currency[] = [{
     }, {
         name: 'Tron',
         symbol: 'trx',
-        addressTypes: { prod: ['0x41'], testnet: ['0xa0'] },
+        addressTypes: { prod: ['65'], testnet: ['160'] },
         validator: TRXValidator.isValidAddress,
     }, {
         name: 'Nem',

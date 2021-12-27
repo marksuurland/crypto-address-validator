@@ -1,5 +1,5 @@
 import {toHex, keccak256Checksum} from '../crypto/utils';
-const base32 = require('./crypto/externals/base32');
+const base32 = require('../crypto/externals/base32');
 
 export function isValidAddress(_address: string): boolean {
     const address = _address.toString().toUpperCase().replace(/-/g, '');
