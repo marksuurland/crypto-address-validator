@@ -1,7 +1,8 @@
 import { sha256, hexStr2byteArray, byteArray2hexStr } from '../crypto/utils';
-const base58 = require('./crypto/externals/base58');
+import { Currency, Options } from '../types/types';
+const base58 = require('../crypto/externals/base58');
 
-function decodeBase58Address(base58Sting: any) {
+function decodeBase58Address(base58Sting: string) {
     if (typeof (base58Sting) !== 'string') {
         return false;
     }
@@ -10,7 +11,7 @@ function decodeBase58Address(base58Sting: any) {
     }
 
     try {
-        var address = base58(base58Sting);
+        var address = base58.decode(base58Sting);
     } catch (e) {
         return false
     }
@@ -34,7 +35,7 @@ function decodeBase58Address(base58Sting: any) {
     return false;
 }
 
-function getEnv(currency: any, networkType: any) {
+function getEnv(currency: Currency, networkType: string) {
     let evn = networkType || 'prod';
 
     if (evn !== 'prod' && evn !== 'testnet') evn = 'prod';
@@ -42,7 +43,7 @@ function getEnv(currency: any, networkType: any) {
     return currency.addressTypes[evn][0]
 }
 
-export function isValidAddress(mainAddress: any, currency: any, opts: any) {
+export function isValidAddress(mainAddress: string, currency: Currency, opts: Options) {
     const networkType = opts ? opts.networkType : '';
     const address = decodeBase58Address(mainAddress);
 
@@ -54,6 +55,6 @@ export function isValidAddress(mainAddress: any, currency: any, opts: any) {
         return false;
     }
 
-    return getEnv(currency, networkType) === address[0];
+    return getEnv(currency, networkType) === address[0].toString();
 }
 

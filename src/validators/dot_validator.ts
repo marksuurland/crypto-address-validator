@@ -31,7 +31,7 @@ function verifyChecksum(address: string): boolean {
     try {
         const preImage = '53533538505245';
 
-        const decoded = base58(address);
+        const decoded = base58.decode(address);
         const addressType = byteArray2hexStr(decoded.slice(0, 1));
         const addressAndChecksum = decoded.slice(1);
 
