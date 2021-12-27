@@ -1,7 +1,7 @@
 import { Currency, Options } from "../types/types";
 
 var base58 = require('../crypto/externals/base58');
-var segwit = require('./crypto/segwit_addr');
+var segwit = require('../crypto/externals/segwit_addr');
 var cryptoUtils = require('./crypto/utils');
 
 var DEFAULT_NETWORK_TYPE = 'prod';

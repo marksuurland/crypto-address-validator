@@ -27,8 +27,8 @@ npm install multicoin-address-validator-ts
 
 ###### Parameters
 * address - Wallet address to validate.
-* currency - Optional. Currency name or symbol, e.g. `'bitcoin'` (default), `'litecoin'` or `'LTC'`
-* networkType - Optional. Use `'prod'` (default) to enforce standard address, `'testnet'` to enforce testnet address and `'both'` to enforce nothing.
+* currency - Currency name or symbol, e.g. `'bitcoin'` (default), `'litecoin'` or `'LTC'`
+* networkType - Use `'prod'` (default) to enforce standard address, `'testnet'` to enforce testnet address and `'both'` to enforce nothing.
 
 > Returns true if the address (string) is a valid wallet address for the crypto currency specified, see below for supported currencies.
 

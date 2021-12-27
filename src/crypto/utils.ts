@@ -1,8 +1,8 @@
 var jsSHA = require('jssha');
 var sha512256 = require('js-sha512').sha512_256
-var Blake256 = require('./external/blake256');
+var Blake256 = require('./externals/blake256');
 import * as sha3 from 'js-sha3';
-var Blake2B = require('./blake2b');
+var Blake2B = require('./externals/blake2b');
 var BigNum = require('browserify-bignum');
 
 export function numberToHex(number: any, length?: any) {
