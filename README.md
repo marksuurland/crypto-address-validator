@@ -26,10 +26,12 @@ npm install crypto-address-validator-ts
 ### Supported crypto currencies
 
 * 0x/zrx `'0x'` or `'zrx'`
+* 1inch Network/1inch `'1inch Network'` or `'1inch'` only erc-20 validation no bep-20, xdai or avalanche c-chain
 * Aave Coin/aave `'Aave Coin'` or `'aave'`
 * Aavegotchi/ghst `'Aavegotchi'` or `'ghst'`
 * Amp/amp `'Amp'` or `'amp'`
 * Aragon/ant `'Aragon'` or `'ant'`
+* Alpha Finance Lab/alpha `'Alpha Finance Lab'` or `'alpha'` only erc-20 validation no bep-20
 * Audius/audio `'Audius'` or `'audio'`
 * Augur/rep `'Augur'` or `'rep'`
 * AugurV2/repv2 `'AugurV2'` or `'repv2'`
@@ -38,6 +40,7 @@ npm install crypto-address-validator-ts
 * Badger DAO/badger `'Badger DAO'` or `'badger'`
 * Balancer/bal `'Balancer'` or `'bal'`
 * Bancor/bnt `'Bancor'` or `'bnt'`
+* Band Protocol/band `'Band Protocol'` or `'band'` only erc-20 validation no bep-20, xdai or fantom
 * Bankex/bkx `'Bankex'` or `'bkx'`
 * Basic Attention Token/bat `'Basic Attention Token'` or `'bat'`
 * BeaverCoin/bvc `'BeaverCoin'` or `'bvc'`
@@ -54,10 +57,13 @@ npm install crypto-address-validator-ts
 * bZx Protocol/bzrx `'bZx Protocol'` or `'bzrx'`
 * Callisto/clo `'Callisto'` or `'clo'`
 * Cardano/ada `'Cardano'` or `'ada'`
+* Cartesi/ctsi `'Cartesi'` or `'ctsi'` only erc-20 validation no bep-20, polygon or avalanche c-chain
 * Celsius/cel `'Celsius'` or `'cel'`
+* Chiliz/chz `'Chiliz'` or `'chz'` only erc-20 validation no bep-20
 * Chainlink/link `'Chainlink'` or `'link'`
 * Civic/cvc `'Civic'` or `'cvc'`
 * Compound/comp `'Compound'` or `'comp'`
+* Cream Finance/cream `'Cream Finance'` or `'cream'` only erc-20 validation no bep-20, xdai or fantom
 * Cred/lba `'Cred'` or `'lba'`
 * Crypto.com Coin/cro `'Crypto.com Coin'` or `'cro'`
 * Curve DAO Token/crv `'Curve DAO Token'` or `'crv'`
@@ -68,7 +74,10 @@ npm install crypto-address-validator-ts
 * Dent/dent `'Dent'` or `'dent'`
 * DigiByte/dgb `'DigiByte'` or `'dgb'`
 * District0x/dnt `'District0x'` or `'dnt'`
-* DogeCoin/doge `'DogeCoin'` or `'doge'`
+* DogeCoin/doge `'DogeCoin'` or `'doge'`,
+* dYdX/dydx `'dYdX'` or `'dydx'`
+* EasyFi/ez `'EasyFi'` or `'ez'`
+* Efinity Token/efi `'Efinity Token'` or `'efi'`
 * Enjin Coin/enj `'Enjin Coin'` or `'enj'`
 * Enzyme/mln `'Enzyme'` or `'mln'`
 * EOS/eos `'EOS'` or `'eos'`
@@ -92,15 +101,20 @@ npm install crypto-address-validator-ts
 * Golem (GNT)/gnt `'Golem (GNT)'` or `'gnt'`
 * HedgeTrade/hedg `'HedgeTrade'` or `'hedg'`
 * Hegic/hegic `'Hegic'` or `'hegic'`
+* Holo/hot `'Holo'` or `'hot'` only erc-20 validation no xdai
 * Hush/hush `'Hush'` or `'hush'`
 * HyperSpace/xsc `'HyperSpace'` or `'xsc'`
+* ICON/icx `'ICON'` or `'icx'`
 * iExec RLC/rlc `'iExec RLC'` or `'rlc'`
+* Immutable X/imx `'Immutable X'` or `'imx'`
 * Illuvium/ilv `'Illuvium'` or `'ilv'`
 * Injective Protocol/inj `'Injective Protocol'` or `'inj'`
+* IOTA/miota `'IOTA'` or `'miota'`
 * Komodo/kmd `'Komodo'` or `'kmd'`
 * KeeperDAO/rook `'KeeperDAO'` or `'rook'`
 * Kyber Network Crystal v2/knc `'Kyber Network Crystal v2'` or `'knc'`
 * LBRY Credits/lbc `'LBRY Credits'` or `'lbc'`
+* UNUS SED LEO/leo `'UNUS SED LEO'` or `'leo'`
 * Lisk/lsk `'Lisk'` or `'lsk'`
 * LiteCoin/ltc `'LiteCoin'` or `'ltc'`
 * Loopring/lrc `'Loopring'` or `'lrc'`
@@ -112,8 +126,10 @@ npm install crypto-address-validator-ts
 * MegaCoin/mec `'MegaCoin'` or `'mec'`
 * Melon/mln `'Melon'` or `'mln'`
 * Metal/mtl `'Metal'` or `'mtl'`
+* Mirror Protocol/mir `'Mirror Protocol'` or `'mir'` only erc-20 validation no bep-20 or terra
 * MonaCoin/mona `'MonaCoin'` or `'mona'`
 * Multi-collateral DAI/dai `'Multi-collateral DAI'` or `'dai'`
+* MyNeighborAlice/alice `'MyNeighborAlice'` or `'alice'` only erc-20 validation no bep-20
 * NameCoin/nmc `'NameCoin'` or `'nmc'`
 * Nano/nano `'Nano'` or `'nano'`
 * Nem/xem `'Nem'` or `'xem'`
@@ -149,6 +165,7 @@ npm install crypto-address-validator-ts
 * Ripio Credit Network/rcn `'Ripio Credit Network'` or `'rcn'`
 * Ripple/xrp `'Ripple'` or `'xrp'`
 * Salt/salt `'Salt'` or `'salt'`
+* Selfkey/key `'Selfkey'` or `'key'`
 * Serum/srm `'Serum'` or `'srm'`
 * Serve/serv `'Serve'` or `'serv'`
 * SHIBA INU/shib `'SHIBA INU'` or `'shib'`
@@ -164,7 +181,10 @@ npm install crypto-address-validator-ts
 * Storj/storj `'Storj'` or `'storj'`
 * Storm/storm `'Storm'` or `'storm'`
 * StormX/stmx `'StormX'` or `'stmx'`
-* SushiSwap/sushi `'SushiSwap'` or `'sushi'`
+* Streamr/data `'Streamr'` or `'data'`
+* SushiSwap/sushi `'SushiSwap'` or `'sushi'`,
+* SuperFarm/super `'SuperFarm'` or `'super'` only erc-20 validation no bep-20 or polygon
+* SuperRare/rare `'SuperRare'` or `'rare'`
 * Swarm City/swt `'Swarm City'` or `'swt'`
 * Swipe/sxp `'Swipe'` or `'sxp'`
 * Synthetix Network/snx `'Synthetix Network'` or `'snx'`
@@ -209,7 +229,7 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angu
 import { validate } from 'crypto-address-validator-ts';
 
 @Directive({
-  selector: '[cryptoAddress]',
+  selector: '[ccyCode]',
   providers: [{provide: NG_VALIDATORS, useExisting: CryptoAddressValidationDirective, multi: true}]
 })
 export class CryptoAddressValidationDirective implements Validator {
@@ -228,5 +248,5 @@ export class CryptoAddressValidationDirective implements Validator {
 #### HTML
 ```html
 <input id="address"
-       cryptoAddress="btc">
+       [ccyCode]="currency">
 ```       

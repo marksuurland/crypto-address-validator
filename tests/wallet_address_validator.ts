@@ -700,6 +700,10 @@ describe('validate', function () {
             valid('G4qGCGF4vWGPzYi2pxc2Djvgv3j8NiWaHQMgTVebCX6W', 'sol', null);
         });
 
+        it('should return true for correct iota addresses', function () {
+            valid('iota1qpklumdlltn9mkmxmv2j34rtccv06c8eeatqn4fy44a0llzrwzx76t7yjqk', 'miota', null);
+            invalid('1qpklumdlltn9mkmxmv2j34rtccv06c8eeatqn4fy44a0llzrwzx76t7yjqk', 'miota', null);
+        });
     });
 
     describe('invalid results', function () {

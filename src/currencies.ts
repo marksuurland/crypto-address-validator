@@ -17,6 +17,7 @@ import * as USDTValidator from './validators/usdt_validator';
 import * as DotValidator from './validators/dot_validator';
 import * as BIP173Validator from './validators/bip173_validator';
 import * as Base58Validator from './validators/base58_validator';
+import * as IOTAValidator from './validators/iota_validator';
 
 // defines P2PKH and P2SH address types for standard (prod) and testnet networks
 const CURRENCIES: Currency[] = [{
@@ -850,7 +851,108 @@ const CURRENCIES: Currency[] = [{
         name: 'SingularityNET',
         symbol: 'agix',
         validator: ETHValidator.isValidAddress,
-    }
+    },
+    {
+        name: 'MyNeighborAlice',
+        symbol: 'alice',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Mirror Protocol',
+        symbol: 'mir',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Chiliz',
+        symbol: 'chz',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'SuperFarm',
+        symbol: 'super',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'UNUS SED LEO',
+        symbol: 'leo',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'SuperRare',
+        symbol: 'rare',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Selfkey',
+        symbol: 'key',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Immutable X',
+        symbol: 'imx',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Icon',
+        symbol: 'icx',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Holo',
+        symbol: 'hot',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Efinity Token',
+        symbol: 'efi',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'EasyFi',
+        symbol: 'ez',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'dYdX',
+        symbol: 'dydx',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Streamr',
+        symbol: 'data',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Cartesi',
+        symbol: 'ctsi',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Cream Finance',
+        symbol: 'cream',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Band Protocol',
+        symbol: 'band',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'Alpha Finance Lab',
+        symbol: 'alpha',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: '1inch Network',
+        symbol: '1inch',
+        validator: ETHValidator.isValidAddress,
+    },
+    {
+        name: 'IOTA',
+        symbol: 'miota',
+        bech32Hrp: { prod: ['iota'], testnet: ['iota']},
+        validator: IOTAValidator.isValidAddress,
+    },
 ];
 
 export function getByNameOrSymbol(currencyNameOrSymbol: string) {
