@@ -1,5 +1,5 @@
 import { blake2b, toHex } from '../crypto/utils';
-var baseX = require('base-x');
+import * as baseX from 'base-x';
 
 const ALLOWED_CHARS = '13456789abcdefghijkmnopqrstuwxyz';
 

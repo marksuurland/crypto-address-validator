@@ -1,4 +1,4 @@
-const baseX = require('base-x');
+import * as baseX from 'base-x';
 import { sha256Checksum, toHex } from '../crypto/utils';
 
 const ALLOWED_CHARS = 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz';

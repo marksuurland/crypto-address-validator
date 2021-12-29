@@ -1,5 +1,5 @@
-var baseX = require('base-x');
-var crc = require('crc');
+import * as baseX from 'base-x';
+import * as CRC from 'crc';
 import {numberToHex, toHex} from '../crypto/utils';
 
 const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
@@ -29,7 +29,7 @@ function verifyChecksum(address: string) {
         return false;
     }
 
-    const computedChecksum = numberToHex(swap16(crc.crc16xmodem(bytes.slice(0, -2))), 4);
+    const computedChecksum = numberToHex(swap16(CRC.crc16xmodem(bytes.slice(0, -2))), 4);
     const checksum = toHex(bytes.slice(-2));
 
     return computedChecksum === checksum

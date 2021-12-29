@@ -1,12 +1,12 @@
-var jsSHA = require('jssha');
-var sha512256 = require('js-sha512').sha512_256
-var Blake256 = require('./externals/blake256');
+import * as jsSHA from 'jssha';
+import * as jsSha512 from 'js-sha512';
 import * as sha3 from 'js-sha3';
+var Blake256 = require('./externals/blake256');
 var Blake2B = require('./externals/blake2b');
 var BigNum = require('browserify-bignum');
 
 export function numberToHex(number: any, length?: any) {
-    var hex = number.toString(16);
+    let hex = number.toString(16);
     if (hex.length % 2 === 1) {
         hex = '0' + hex;
     }
@@ -24,7 +24,7 @@ function isHexChar(c: any) {
 
 /* Convert a hex char to value */
 function hexChar2byte(c: any) {
-    var d = 0;
+    let d = 0;
     if (c >= 'A' && c <= 'F') {
         d = c.charCodeAt(0) - 'A'.charCodeAt(0) + 10;
     }
@@ -39,15 +39,15 @@ function hexChar2byte(c: any) {
 
 /* Convert a byte to string */
 function byte2hexStr(byte: any) {
-    var hexByteMap = "0123456789ABCDEF";
-    var str = "";
+    const hexByteMap = "0123456789ABCDEF";
+    let str = "";
     str += hexByteMap.charAt(byte >> 4);
     str += hexByteMap.charAt(byte & 0x0f);
     return str;
 }
 
 export function byteArray2hexStr(byteArray: any) {
-    var str = "";
+    let str = "";
     for (var i = 0; i < (byteArray.length - 1); i++) {
         str += byte2hexStr(byteArray[i]);
     }
@@ -56,14 +56,14 @@ export function byteArray2hexStr(byteArray: any) {
 }
 
 export function hexStr2byteArray(str: any) {
-    var byteArray = Array();
-    var d = 0;
-    var i = 0;
-    var j = 0;
-    var k = 0;
+    const byteArray = Array();
+    let d = 0;
+    let i = 0;
+    let j = 0;
+    let k = 0;
 
      for (i = 0; i < str.length; i++) {
-        var c = str.charAt(i);
+        const c = str.charAt(i);
         if (isHexChar(c)) {
             d <<= 4;
             d += hexChar2byte(c);
@@ -78,15 +78,15 @@ export function hexStr2byteArray(str: any) {
 }
 
 export function toHex(arrayOfBytes: any) {
-    var hex = '';
-    for (var i = 0; i < arrayOfBytes.length; i++) {
+    let hex = '';
+    for (let i = 0; i < arrayOfBytes.length; i++) {
         hex += numberToHex(arrayOfBytes[i]);
     }
     return hex;
 }
 
 export function sha256(payload: any, format = 'HEX') {
-    var sha = new jsSHA('SHA-256', format);
+    const sha = new jsSHA('SHA-256', format);
     sha.update(payload);
     return sha.getHash(format);
 }
@@ -100,7 +100,7 @@ export function sha256Checksum(payload: any) {
 }
 
 export function sha512_256(payload: any) {
-    const hash = sha512256.create()
+    const hash = jsSha512.sha512_256.create()
     hash.update(Buffer.from(payload, "hex"))
     return hash.hex().toUpperCase();
 }
