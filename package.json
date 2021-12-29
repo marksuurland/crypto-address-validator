@@ -1,8 +1,10 @@
 {
     "name": "crypto-address-validator-ts",
-    "version": "0.5.9",
+    "version": "0.5.10",
     "description": "Crypto address validator for Bitcoin and other Altcoins, forked to be used with typescript",
     "keywords": [
+        "typesript",
+        "angular",
         "0x",
         "zrx",
         "Aave Coin",
@@ -398,6 +400,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/marksuurland/crypto-address-validator-ts.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
