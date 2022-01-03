@@ -1,10 +1,8 @@
 import { getAll, getByNameOrSymbol } from './currencies';
 import { Options } from './types/types';
 
-const DEFAULT_CURRENCY_NAME = 'bitcoin';
-
 export function validate(address: string, currencyNameOrSymbol: string, opts: Options) {
-    var currency = getByNameOrSymbol(currencyNameOrSymbol || DEFAULT_CURRENCY_NAME);
+    var currency = getByNameOrSymbol(currencyNameOrSymbol);
 
     if (currency && currency.validator) {
         return currency.validator(address, currency, opts);

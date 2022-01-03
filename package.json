@@ -1,6 +1,6 @@
 {
     "name": "crypto-address-validator-ts",
-    "version": "0.5.10",
+    "version": "0.5.11",
     "description": "Crypto address validator for Bitcoin and other Altcoins, forked to be used with typescript",
     "keywords": [
         "typesript",
@@ -426,6 +426,7 @@
         "@types/mocha": "^9.0.0",
         "chai": "^4.3.4",
         "mocha": "^9.1.3",
+        "buffer": "^6.0.3",
         "ts-node": "^10.4.0",
         "typescript": "^4.5.4"
     },
