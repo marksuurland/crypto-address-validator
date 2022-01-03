@@ -401,9 +401,6 @@
         "type": "git",
         "url": "https://github.com/marksuurland/crypto-address-validator-ts.git"
     },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
