@@ -294,6 +294,14 @@ describe('validate', function () {
             valid('rDTXLQ7ZKZVKz33zJbHjgVShjsBnqMBhmN', 'XRP', null);
         });
 
+        it('should return true for correct Baby Ripple addresses', function () {
+            valid('rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn', 'babyxrp', null);
+            valid('rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCn', 'babyxrp', null);
+            valid('r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV', 'babyxrp', null);
+            valid('rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh', 'babyxrp', null);
+            valid('rDTXLQ7ZKZVKz33zJbHjgVShjsBnqMBhmN', 'babyxrp', null);
+        });
+
         it('should return true for correct dash addresses', function () {
             valid('Xx4dYKgz3Zcv6kheaqog3fynaKWjbahb6b', 'dash', null);
             valid('XcY4WJ6Z2Q8w7vcYER1JypC8s2oa3SQ1b1', 'DASH', null);
@@ -704,6 +712,16 @@ describe('validate', function () {
             valid('iota1qpklumdlltn9mkmxmv2j34rtccv06c8eeatqn4fy44a0llzrwzx76t7yjqk', 'miota', null);
             invalid('1qpklumdlltn9mkmxmv2j34rtccv06c8eeatqn4fy44a0llzrwzx76t7yjqk', 'miota', null);
         });
+
+        it('should return true for correct monero addresses', function () {
+            valid('47zQ5LAivg6hNCgijXSEFVLX7mke1bgM6YGLFaANDoJbgXDymcAAZvvMNt2PmMpqEe5qRy2zyfMYXdwpmdyitiFh84xnPG2', 'monero', null);
+            valid('48bWuoDG75CXMDHbmPEvUF2hm1vLDic7ZJ7hqRkL65QR9p13AQAX4eEACXNk4YP115Q4KRVZnAvmMBHrcGfv9FvKPZnH6vH', 'XMR',  null);
+            valid('A2be3UvzMtkJtxRYgcCbQt2y7Rp2eLVGqNTWfZeankrWimSMM4y7uMP6B9oAZaHsXTj8KFSerkSkkVRuEuEca9QM8VhxCNU', 'monero', { networkType: 'testnet' });
+
+            //integrated addresses
+            valid('4Gd4DLiXzBmbVX2FZZ3Cvu6fUaWACup1qDowprUCje1kSP4FmbftiJMSfV8kWZXNqmVwj4m52xqtgFNUudVmsmGkGvkLcCibWfVUfUFVB7', 'monero', null);
+            valid('4J5sF94AzXgFgx8LuWc9dcWkJkGkD3cL3L2AuhX6QA9jFvSxxj6QhHqHXqM2b2Go7G8RyDzEbHxYd9G26XUUbuJChipEyBz9fENMU2Ua9b', 'XMR', null);
+        });
     });
 
     describe('invalid results', function () {
@@ -1037,7 +1055,16 @@ describe('validate', function () {
             invalid('addr1skemppmfevyk0lshu2w8j34707s3t3t58a04xcx5ccevrcmvpmxg2qt4pk0', 'sol', { networkType: 'testnet' });
         });
 
+        it('should return false for incorrect monero addresses', function () {
+            commonTests('monero');
+            invalid('4AWygwA3hHNE4e4Yr9PtRWJiorXTjZkCi57g4ExYzfXDFFQ8DRFEFyui1dLqVknpqQjGUBdTMbgaFAZaDbrVHdk3GAKBZ3E', 'monero', null);
+            invalid('44643dtxcxjgMWEQLo6mh1c4d9Zxx9GbgK9hEj9iGSiFEryCkbwHyJ3JqxZJRqeC3Hb7ZBLKq5NkaJwR1x95EYnR1bTgN6d', 'xmr', null);
+            invalid('A17N9ztrxjQD3v3JJtHGvHVnq6BAbujDNEuensB6PFwBYFpkjAicih8hDtX76HBuEag5NeaCuMZmRMe6eE5NMRGxFTQn8nJ', 'monero', { networkType: 'testnet' });
 
+            //integrated
+            invalid('4LNSCKNSTPNbJYkyAEgL966eHJHLDHiq1PpwKoiFBybcSqNGYfLBJApC62uQEeGAFxfYEd29uXBBrJFo7DhKqFVNi3GhmN79EtD5dgycYz', 'monero', null);
+            invalid('4JpzTwf3i1GeCV76beVr19179oa8j1L8xNSC1bXMtAxxdf4aTTLqubL8EvXfQmUGKt9MMigFtKy91VtoTTSfg1LU7LocPruT6KcGC9RKJV', 'xmr', null);
+        });
     });
 
 });
@@ -1171,6 +1198,13 @@ describe('invalid results', function () {
         invalid('rDTXLQ7ZKZVKz33zJbHjgVShjsBnqMBhMN', 'XRP', null);
         invalid('6xAff4d6793F584a473348EbA058deb8ca', 'ripple', null);
         invalid('DJ53hTyLBdZp2wMi5BsCS3rtEL1ioYUkva', 'ripple', null);
+    });
+
+    it('should return false for incorrect baby ripple addresses', function () {
+        invalid('rG1QQv2nh2gr7RCZ1P8YYcBUKCCN633jCN', 'babyxrp', null);
+        invalid('rDTXLQ7ZKZVKz33zJbHjgVShjsBnqMBhMN', 'babyxrp', null);
+        invalid('6xAff4d6793F584a473348EbA058deb8ca', 'babyxrp', null);
+        invalid('DJ53hTyLBdZp2wMi5BsCS3rtEL1ioYUkva', 'babyxrp', null);
     });
 
     it('should return false for incorrect dash addresses', function () {
