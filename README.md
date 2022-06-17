@@ -45,7 +45,7 @@ npm install crypto-address-validator-ts
 * Bankex/bkx `'Bankex'` or `'bkx'`
 * Basic Attention Token/bat `'Basic Attention Token'` or `'bat'`
 * BeaverCoin/bvc `'BeaverCoin'` or `'bvc'`
-* Binance Coin Mainnet/bnb `'Binance Coin Mannet'` or `'bnb'`
+* Binance Coin Mainnet/bnb `'Binance Coin Mainnet'` or `'bnb'`
 * BioCoin/bio `'BioCoin'` or `'bio'`
 * Bitcoin/btc `'Bitcoin'` or `'btc'`
 * Bitcoin SV/bsv `'Bitcoin SV'` or `'bsv'`

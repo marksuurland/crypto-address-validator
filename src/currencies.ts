@@ -210,7 +210,7 @@ const CURRENCIES: Currency[] = [{
         symbol: 'babyxrp',
         validator: XRPValidator.isValidAddress,
     }, {
-        name: 'Binance Coin Mannet',
+        name: 'Binance Coin Mainnet',
         symbol: 'bnb',
         validator: ETHValidator.isValidAddress,
     }, {
