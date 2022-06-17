@@ -37,6 +37,7 @@ npm install crypto-address-validator-ts
 * AugurV2/repv2 `'AugurV2'` or `'repv2'`
 * AuroraCoin/aur `'AuroraCoin'` or `'aur'`
 * Axie Infinity/axs `'Axie Infinity'` or `'axs'`
+* Baby Ripple/babyxrp `'Baby Ripple'` or `'babyxrp'`
 * Badger DAO/badger `'Badger DAO'` or `'badger'`
 * Balancer/bal `'Balancer'` or `'bal'`
 * Bancor/bnt `'Bancor'` or `'bnt'`
@@ -44,6 +45,7 @@ npm install crypto-address-validator-ts
 * Bankex/bkx `'Bankex'` or `'bkx'`
 * Basic Attention Token/bat `'Basic Attention Token'` or `'bat'`
 * BeaverCoin/bvc `'BeaverCoin'` or `'bvc'`
+* Binance Coin Mainnet/bnb `'Binance Coin Mainnet'` or `'bnb'`
 * BioCoin/bio `'BioCoin'` or `'bio'`
 * Bitcoin/btc `'Bitcoin'` or `'btc'`
 * Bitcoin SV/bsv `'Bitcoin SV'` or `'bsv'`
@@ -128,6 +130,7 @@ npm install crypto-address-validator-ts
 * Metal/mtl `'Metal'` or `'mtl'`
 * Mirror Protocol/mir `'Mirror Protocol'` or `'mir'` only erc-20 validation no bep-20 or terra
 * MonaCoin/mona `'MonaCoin'` or `'mona'`
+* Monero/xmr `'Monero'` or `'xmr'`
 * Multi-collateral DAI/dai `'Multi-collateral DAI'` or `'dai'`
 * MyNeighborAlice/alice `'MyNeighborAlice'` or `'alice'` only erc-20 validation no bep-20
 * NameCoin/nmc `'NameCoin'` or `'nmc'`
@@ -249,4 +252,4 @@ export class CryptoAddressValidationDirective implements Validator {
 ```html
 <input id="address"
        [ccyCode]="currency">
-```       
+```

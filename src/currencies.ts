@@ -18,6 +18,7 @@ import * as DotValidator from './validators/dot_validator';
 import * as BIP173Validator from './validators/bip173_validator';
 import * as Base58Validator from './validators/base58_validator';
 import * as IOTAValidator from './validators/iota_validator';
+import * as XMRValidator from './validators/xmr_validator';
 
 // defines P2PKH and P2SH address types for standard (prod) and testnet networks
 const CURRENCIES: Currency[] = [{
@@ -204,6 +205,20 @@ const CURRENCIES: Currency[] = [{
         name: 'Ripple',
         symbol: 'xrp',
         validator: XRPValidator.isValidAddress,
+    }, {
+        name: 'Baby Ripple',
+        symbol: 'babyxrp',
+        validator: XRPValidator.isValidAddress,
+    }, {
+        name: 'Binance Coin Mainnet',
+        symbol: 'bnb',
+        validator: ETHValidator.isValidAddress,
+    }, {
+        name: 'Monero',
+        symbol: 'xmr',
+        addressTypes: {prod: ['18'], testnet: ['53']},
+        iAddressTypes: {prod: ['19'], testnet: ['54']},
+        validator: XMRValidator.isValidAddress,
     }, {
         name: 'Dash',
         symbol: 'dash',
