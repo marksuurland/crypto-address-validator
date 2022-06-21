@@ -1,4 +1,4 @@
-var JSBigInt = require('./biginteger')['JSBigInt'];
+var bigInt = require("big-integer");
 
 /**
 Copyright (c) 2017, moneroexamples
@@ -40,7 +40,7 @@ var cnBase58 = (function () {
     var full_block_size = 8;
     var full_encoded_block_size = 11;
 
-    var UINT64_MAX = new JSBigInt(2).pow(64);
+    var UINT64_MAX = bigInt(2).pow(64);
 
     function hextobin(hex) {
         if (hex.length % 2 !== 0) throw "Hex string has invalid length!";
@@ -79,8 +79,8 @@ var cnBase58 = (function () {
         if (data.length < 1 || data.length > 8) {
             throw "Invalid input length";
         }
-        var res = JSBigInt.ZERO;
-        var twopow8 = new JSBigInt(2).pow(8);
+        var res = bigInt.ZERO;
+        var twopow8 = bigInt(2).pow(8);
         var i = 0;
         switch (9 - data.length) {
         case 1:
@@ -111,9 +111,9 @@ var cnBase58 = (function () {
         if (size < 1 || size > 8) {
             throw "Invalid input length";
         }
-        var twopow8 = new JSBigInt(2).pow(8);
+        var twopow8 = bigInt(2).pow(8);
         for (var i = size - 1; i >= 0; i--) {
-            res[i] = num.remainder(twopow8).toJSValue();
+            res[i] = num.remainder(twopow8);
             num = num.divide(twopow8);
         }
         return res;
@@ -170,8 +170,8 @@ var cnBase58 = (function () {
         if (res_size <= 0) {
             throw "Invalid block size";
         }
-        var res_num = new JSBigInt(0);
-        var order = new JSBigInt(1);
+        var res_num = bigInt(0);
+        var order = bigInt(1);
         for (var i = data.length - 1; i >= 0; i--) {
             var digit = alphabet.indexOf(data[i]);
             if (digit < 0) {
@@ -185,7 +185,7 @@ var cnBase58 = (function () {
             res_num = product;
             order = order.multiply(alphabet_size);
         }
-        if (res_size < full_block_size && (new JSBigInt(2).pow(8 * res_size).compare(res_num) <= 0)) {
+        if (res_size < full_block_size && (bigInt(2).pow(8 * res_size).compare(res_num) <= 0)) {
             throw "Overflow 2";
         }
         buf.set(uint64_to_8be(res_num, res_size), index);
