@@ -13,7 +13,7 @@
 	Exports:
 		<BigInteger>
 */
-(function(exports) {
+(function (exports) {
     "use strict";
     /*
         Class: BigInteger
@@ -30,8 +30,57 @@
         > var a = 42;
         > var a = BigInteger.toJSValue("0b101010"); // Not completely useless...
     */
-
     var CONSTRUCT = {}; // Unique token to call "private" version of constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*
         Constructor: BigInteger()
@@ -70,7 +119,7 @@
             return BigInteger.parse(n);
         }
 
-        n = n || [];  // Provide the nullary constructor for subclasses.
+        n = n || []; // Provide the nullary constructor for subclasses.
         while (n.length && !n[n.length - 1]) {
             --n.length;
         }
@@ -78,7 +127,7 @@
         this._s = n.length ? (s || 1) : 0;
     }
 
-    BigInteger._construct = function(n, s) {
+    BigInteger._construct = function (n, s) {
         return new BigInteger(n, s, CONSTRUCT);
     };
 
@@ -126,14 +175,14 @@
         ZERO,
         ONE,
         /* Assuming BigInteger_base > 36 */
-        new BigInteger( [2], 1, CONSTRUCT),
-        new BigInteger( [3], 1, CONSTRUCT),
-        new BigInteger( [4], 1, CONSTRUCT),
-        new BigInteger( [5], 1, CONSTRUCT),
-        new BigInteger( [6], 1, CONSTRUCT),
-        new BigInteger( [7], 1, CONSTRUCT),
-        new BigInteger( [8], 1, CONSTRUCT),
-        new BigInteger( [9], 1, CONSTRUCT),
+        new BigInteger([2], 1, CONSTRUCT),
+        new BigInteger([3], 1, CONSTRUCT),
+        new BigInteger([4], 1, CONSTRUCT),
+        new BigInteger([5], 1, CONSTRUCT),
+        new BigInteger([6], 1, CONSTRUCT),
+        new BigInteger([7], 1, CONSTRUCT),
+        new BigInteger([8], 1, CONSTRUCT),
+        new BigInteger([9], 1, CONSTRUCT),
         new BigInteger([10], 1, CONSTRUCT),
         new BigInteger([11], 1, CONSTRUCT),
         new BigInteger([12], 1, CONSTRUCT),
@@ -176,7 +225,7 @@
         Returns:
             The string representation of the <BigInteger>.
     */
-    BigInteger.prototype.toString = function(base) {
+    BigInteger.prototype.toString = function (base) {
         base = +base || 10;
         if (base < 2 || base > 36) {
             throw new Error("illegal radix " + base + ".");
@@ -189,7 +238,8 @@
             str += this._d[this._d.length - 1].toString();
             for (var i = this._d.length - 2; i >= 0; i--) {
                 var group = this._d[i].toString();
-                while (group.length < BigInteger_base_log10) group = '0' + group;
+                while (group.length < BigInteger_base_log10)
+                    group = '0' + group;
                 str += group;
             }
             return str;
@@ -279,7 +329,7 @@
         Returns:
             a <BigInteger> instance.
     */
-    BigInteger.parse = function(s, base) {
+    BigInteger.parse = function (s, base) {
         // Expands a number in exponential form to decimal form.
         // expandExponential("-13.441*10^5") === "1344100";
         // expandExponential("1.12300e-1") === "0.112300";
@@ -287,7 +337,7 @@
         function expandExponential(str) {
             str = str.replace(/\s*[*xX]\s*10\s*(\^|\*\*)\s*/, "e");
 
-            return str.replace(/^([+\-])?(\d+)\.?(\d*)[eE]([+\-]?\d+)$/, function(x, s, n, f, c) {
+            return str.replace(/^([+\-])?(\d+)\.?(\d*)[eE]([+\-]?\d+)$/, function (x, s, n, f, c) {
                 c = +c;
                 var l = c < 0;
                 var i = n.length + c;
@@ -365,7 +415,7 @@
             if (base == 10) {
                 var d = [];
                 while (digits.length >= BigInteger_base_log10) {
-                    d.push(parseInt(digits.splice(digits.length-BigInteger.base_log10, BigInteger.base_log10).join(''), 10));
+                    d.push(parseInt(digits.splice(digits.length - BigInteger.base_log10, BigInteger.base_log10).join(''), 10));
                 }
                 d.push(parseInt(digits.join(''), 10));
                 return new BigInteger(d, sign, CONSTRUCT);
@@ -395,7 +445,7 @@
         See Also:
             <subtract>, <multiply>, <quotient>, <next>
     */
-    BigInteger.prototype.add = function(n) {
+    BigInteger.prototype.add = function (n) {
         if (this._s === 0) {
             return BigInteger(n);
         }
@@ -436,7 +486,7 @@
             sum[i] = carry;
         }
 
-        for ( ; i < al; i++) {
+        for (; i < al; i++) {
             sum[i] = a[i];
         }
 
@@ -451,7 +501,7 @@
         See Also:
             <abs>
     */
-    BigInteger.prototype.negate = function() {
+    BigInteger.prototype.negate = function () {
         return new BigInteger(this._d, (-this._s) | 0, CONSTRUCT);
     };
 
@@ -463,7 +513,7 @@
         See Also:
             <negate>
     */
-    BigInteger.prototype.abs = function() {
+    BigInteger.prototype.abs = function () {
         return (this._s < 0) ? this.negate() : this;
     };
 
@@ -477,7 +527,7 @@
         See Also:
             <add>, <multiply>, <quotient>, <prev>
     */
-    BigInteger.prototype.subtract = function(n) {
+    BigInteger.prototype.subtract = function (n) {
         if (this._s === 0) {
             return BigInteger(n).negate();
         }
@@ -542,14 +592,14 @@
             }
             diff[i] = digit;
         }
-        for ( ; i < al; i++) {
+        for (; i < al; i++) {
             diff[i] = a[i];
         }
 
         return new BigInteger(diff, sign, CONSTRUCT);
     };
 
-    (function() {
+    (function () {
         function addOne(n, sign) {
             var a = n._d;
             var sum = a.slice();
@@ -597,15 +647,15 @@
             See Also:
                 <add>, <prev>
         */
-        BigInteger.prototype.next = function() {
+        BigInteger.prototype.next = function () {
             switch (this._s) {
-            case 0:
-                return ONE;
-            case -1:
-                return subtractOne(this, -1);
-            // case 1:
-            default:
-                return addOne(this, 1);
+                case 0:
+                    return ONE;
+                case -1:
+                    return subtractOne(this, -1);
+                // case 1:
+                default:
+                    return addOne(this, 1);
             }
         };
 
@@ -617,15 +667,15 @@
             See Also:
                 <next>, <subtract>
         */
-        BigInteger.prototype.prev = function() {
+        BigInteger.prototype.prev = function () {
             switch (this._s) {
-            case 0:
-                return M_ONE;
-            case -1:
-                return addOne(this, -1);
-            // case 1:
-            default:
-                return subtractOne(this, 1);
+                case 0:
+                    return M_ONE;
+                case -1:
+                    return addOne(this, -1);
+                // case 1:
+                default:
+                    return subtractOne(this, 1);
             }
         };
     })();
@@ -641,14 +691,14 @@
         See Also:
             <compare>, <abs>
     */
-    BigInteger.prototype.compareAbs = function(n) {
+    BigInteger.prototype.compareAbs = function (n) {
         if (this === n) {
             return 0;
         }
 
         if (!(n instanceof BigInteger)) {
             if (!isFinite(n)) {
-                return(isNaN(n) ? n : -1);
+                return (isNaN(n) ? n : -1);
             }
             n = BigInteger(n);
         }
@@ -671,7 +721,7 @@
 
         var a = this._d;
         var b = n._d;
-        for (var i = l-1; i >= 0; i--) {
+        for (var i = l - 1; i >= 0; i--) {
             if (a[i] !== b[i]) {
                 return a[i] < b[i] ? -1 : 1;
             }
@@ -690,7 +740,7 @@
         See Also:
             <compareAbs>, <isPositive>, <isNegative>, <isUnit>
     */
-    BigInteger.prototype.compare = function(n) {
+    BigInteger.prototype.compare = function (n) {
         if (this === n) {
             return 0;
         }
@@ -719,7 +769,7 @@
             <isZero>, <isNegative>, <isPositive>, <compareAbs>, <compare>,
             <BigInteger.ONE>, <BigInteger.M_ONE>
     */
-    BigInteger.prototype.isUnit = function() {
+    BigInteger.prototype.isUnit = function () {
         return this === ONE ||
             this === M_ONE ||
             (this._d.length === 1 && this._d[0] === 1);
@@ -736,7 +786,7 @@
         See Also:
             <add>, <subtract>, <quotient>, <square>
     */
-    BigInteger.prototype.multiply = function(n) {
+    BigInteger.prototype.multiply = function (n) {
         // TODO: Consider adding Karatsuba multiplication for large numbers
         if (this._s === 0) {
             return ZERO;
@@ -797,7 +847,7 @@
     // Multiply a BigInteger by a single-digit native number
     // Assumes that this and n are >= 0
     // This is not really intended to be used outside the library itself
-    BigInteger.prototype.multiplySingleDigit = function(n) {
+    BigInteger.prototype.multiplySingleDigit = function (n) {
         if (n === 0 || this._s === 0) {
             return ZERO;
         }
@@ -809,8 +859,8 @@
         if (this._d.length === 1) {
             digit = this._d[0] * n;
             if (digit >= BigInteger_base) {
-                return new BigInteger([(digit % BigInteger_base)|0,
-                        (digit / BigInteger_base)|0], 1, CONSTRUCT);
+                return new BigInteger([(digit % BigInteger_base) | 0,
+                (digit / BigInteger_base) | 0], 1, CONSTRUCT);
             }
             return new BigInteger([digit], 1, CONSTRUCT);
         }
@@ -854,12 +904,11 @@
         See Also:
             <multiply>
     */
-    BigInteger.prototype.square = function() {
+    BigInteger.prototype.square = function () {
         // Normally, squaring a 10-digit number would take 100 multiplications.
         // Of these 10 are unique diagonals, of the remaining 90 (100-10), 45 are repeated.
         // This procedure saves (N*(N-1))/2 multiplications, (e.g., 45 of 100 multiplies).
         // Based on code by Gary Darby, Intellitech Systems Inc., www.DelphiForFun.org
-
         if (this._s === 0) {
             return ZERO;
         }
@@ -912,7 +961,7 @@
         See Also:
             <add>, <subtract>, <multiply>, <divRem>, <remainder>
     */
-    BigInteger.prototype.quotient = function(n) {
+    BigInteger.prototype.quotient = function (n) {
         return this.divRem(n)[0];
     };
 
@@ -934,7 +983,7 @@
         See Also:
             <divRem>, <quotient>
     */
-    BigInteger.prototype.remainder = function(n) {
+    BigInteger.prototype.remainder = function (n) {
         return this.divRem(n)[1];
     };
 
@@ -953,7 +1002,7 @@
         See Also:
             <quotient>, <remainder>
     */
-    BigInteger.prototype.divRem = function(n) {
+    BigInteger.prototype.divRem = function (n) {
         n = BigInteger(n);
         if (n._s === 0) {
             throw new Error("Divide by zero");
@@ -967,10 +1016,10 @@
 
         // Test for easy cases -- |n1| <= |n2|
         switch (this.compareAbs(n)) {
-        case 0: // n1 == n2
-            return [this._s === n._s ? ONE : M_ONE, ZERO];
-        case -1: // |n1| < |n2|
-            return [ZERO, this];
+            case 0: // n1 == n2
+                return [this._s === n._s ? ONE : M_ONE, ZERO];
+            case -1: // |n1| < |n2|
+                return [ZERO, this];
         }
 
         var sign = this._s * n._s;
@@ -996,14 +1045,14 @@
             }
             else {
                 var xlen = part._d.length, ylen = a._d.length;
-                var highx = part._d[xlen-1]*BigInteger_base + part._d[xlen-2];
-                var highy = a._d[ylen-1]*BigInteger_base + a._d[ylen-2];
+                var highx = part._d[xlen - 1] * BigInteger_base + part._d[xlen - 2];
+                var highy = a._d[ylen - 1] * BigInteger_base + a._d[ylen - 2];
                 if (part._d.length > a._d.length) {
                     // The length of part._d can either match a._d length,
                     // or exceed it by one.
-                    highx = (highx+1)*BigInteger_base;
+                    highx = (highx + 1) * BigInteger_base;
                 }
-                guess = Math.ceil(highx/highy);
+                guess = Math.ceil(highx / highy);
             }
             do {
                 var check = a.multiplySingleDigit(guess);
@@ -1022,13 +1071,13 @@
         }
 
         return [new BigInteger(quot.reverse(), sign, CONSTRUCT),
-               new BigInteger(part._d, this._s, CONSTRUCT)];
+        new BigInteger(part._d, this._s, CONSTRUCT)];
     };
 
     // Throws an exception if n is outside of (-BigInteger.base, -1] or
     // [1, BigInteger.base).  It's not necessary to call this, since the
     // other division functions will call it if they are able to.
-    BigInteger.prototype.divRemSmall = function(n) {
+    BigInteger.prototype.divRemSmall = function (n) {
         var r;
         n = +n;
         if (n === 0) {
@@ -1052,7 +1101,6 @@
         }
 
         // 2 <= n < BigInteger_base
-
         // divide a single digit by a single digit
         if (this._d.length === 1) {
             var q = new BigInteger([(this._d[0] / n) | 0], 1, CONSTRUCT);
@@ -1116,7 +1164,7 @@
         See Also:
             <isOdd>
     */
-    BigInteger.prototype.isEven = function() {
+    BigInteger.prototype.isEven = function () {
         var digits = this._d;
         return this._s === 0 || digits.length === 0 || (digits[0] % 2) === 0;
     };
@@ -1129,7 +1177,7 @@
         See Also:
             <isEven>
     */
-    BigInteger.prototype.isOdd = function() {
+    BigInteger.prototype.isOdd = function () {
         return !this.isEven();
     };
 
@@ -1143,7 +1191,7 @@
         See Also:
             <isZero>, <isPositive>, <isNegative>, <compare>, <BigInteger.ZERO>
     */
-    BigInteger.prototype.sign = function() {
+    BigInteger.prototype.sign = function () {
         return this._s;
     };
 
@@ -1155,7 +1203,7 @@
         See Also:
             <sign>, <isZero>, <isNegative>, <isUnit>, <compare>, <BigInteger.ZERO>
     */
-    BigInteger.prototype.isPositive = function() {
+    BigInteger.prototype.isPositive = function () {
         return this._s > 0;
     };
 
@@ -1167,7 +1215,7 @@
         See Also:
             <sign>, <isPositive>, <isZero>, <isUnit>, <compare>, <BigInteger.ZERO>
     */
-    BigInteger.prototype.isNegative = function() {
+    BigInteger.prototype.isNegative = function () {
         return this._s < 0;
     };
 
@@ -1179,7 +1227,7 @@
         See Also:
             <sign>, <isPositive>, <isNegative>, <isUnit>, <BigInteger.ZERO>
     */
-    BigInteger.prototype.isZero = function() {
+    BigInteger.prototype.isZero = function () {
         return this._s === 0;
     };
 
@@ -1202,7 +1250,7 @@
         See Also:
             <pow>, <multiply>
     */
-    BigInteger.prototype.exp10 = function(n) {
+    BigInteger.prototype.exp10 = function (n) {
         n = +n;
         if (n === 0) {
             return this;
@@ -1225,7 +1273,7 @@
             k._s = 1;
             k = k.multiplySingleDigit(Math.pow(10, n));
             return (this._s < 0 ? k.negate() : k);
-        } else if (-n >= this._d.length*BigInteger_base_log10) {
+        } else if (-n >= this._d.length * BigInteger_base_log10) {
             return ZERO;
         } else {
             var k = new BigInteger(this._d.slice(), this._s, CONSTRUCT);
@@ -1249,7 +1297,7 @@
         See Also:
             <modPow>
     */
-    BigInteger.prototype.pow = function(n) {
+    BigInteger.prototype.pow = function (n) {
         if (this.isUnit()) {
             if (this._s > 0) {
                 return this;
@@ -1312,7 +1360,7 @@
         See Also:
             <pow>, <mod>
     */
-    BigInteger.prototype.modPow = function(exponent, modulus) {
+    BigInteger.prototype.modPow = function (exponent, modulus) {
         var result = ONE;
         var base = this;
 
@@ -1341,20 +1389,20 @@
         See Also:
             <toJSValue>
     */
-    BigInteger.prototype.log = function() {
+    BigInteger.prototype.log = function () {
         switch (this._s) {
-        case 0:	 return -Infinity;
-        case -1: return NaN;
-        default: // Fall through.
+            case 0: return -Infinity;
+            case -1: return NaN;
+            default: // Fall through.
         }
 
         var l = this._d.length;
 
-        if (l*BigInteger_base_log10 < 30) {
+        if (l * BigInteger_base_log10 < 30) {
             return Math.log(this.valueOf());
         }
 
-        var N = Math.ceil(30/BigInteger_base_log10);
+        var N = Math.ceil(30 / BigInteger_base_log10);
         var firstNdigits = this._d.slice(l - N);
         return Math.log((new BigInteger(firstNdigits, 1, CONSTRUCT)).valueOf()) + (l - N) * Math.log(BigInteger_base);
     };
@@ -1369,7 +1417,7 @@
         See Also:
             <toString>, <toJSValue>
     */
-    BigInteger.prototype.valueOf = function() {
+    BigInteger.prototype.valueOf = function () {
         return parseInt(this.toString(), 10);
     };
 
@@ -1382,7 +1430,7 @@
         See Also:
             <toString>, <valueOf>
     */
-    BigInteger.prototype.toJSValue = function() {
+    BigInteger.prototype.toJSValue = function () {
         return parseInt(this.toString(), 10);
     };
 
@@ -1400,26 +1448,26 @@
     // The largest exponent allowed in <pow> and <exp10> (0x7FFFFFFF or 2147483647).
     BigInteger.MAX_EXP = MAX_EXP;
 
-    (function() {
+    (function () {
         function makeUnary(fn) {
-            return function(a) {
+            return function (a) {
                 return fn.call(BigInteger(a));
             };
         }
 
         function makeBinary(fn) {
-            return function(a, b) {
+            return function (a, b) {
                 return fn.call(BigInteger(a), BigInteger(b));
             };
         }
 
         function makeTrinary(fn) {
-            return function(a, b, c) {
+            return function (a, b, c) {
                 return fn.call(BigInteger(a), BigInteger(b), BigInteger(c));
             };
         }
 
-        (function() {
+        (function () {
             var i, fn;
             var unary = "toJSValue,isEven,isOdd,sign,isZero,isNegative,abs,isUnit,square,negate,isPositive,toString,next,prev,log".split(",");
             var binary = "compare,remainder,divRem,subtract,add,quotient,divide,multiply,pow,compareAbs".split(",");
@@ -1440,11 +1488,11 @@
                 BigInteger[fn] = makeTrinary(BigInteger.prototype[fn]);
             }
 
-            BigInteger.exp10 = function(x, n) {
+            BigInteger.exp10 = function (x, n) {
                 return BigInteger(x).exp10(n);
             };
         })();
     })();
 
     exports.JSBigInt = BigInteger; // exports.BigInteger changed to exports.JSBigInt
-    })(typeof exports !== 'undefined' ? exports : this);
+})(typeof exports !== 'undefined' ? exports : this);
